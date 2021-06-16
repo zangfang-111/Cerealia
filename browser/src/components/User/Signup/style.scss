@@ -1,0 +1,39 @@
+
+.signup-form {
+  width: 70vw;
+  max-width: 960px;
+  .ant-form-item-control {
+   margin: 0 7%;
+   min-width: 200px;
+  }
+  .singup-bottom {
+    text-align: center;
+
+    p {
+      margin: 20px;
+    }
+
+    a {
+      text-decoration: underline
+    }
+  }
+
+}
+
+.violet-button {
+  @include themify($themes) {
+    background-color: themed('down-load');
+  }
+}
+
+.invalid {
+  color: red;
+}
+
+.close-Icon {
+  float: right;
+}
+
+.role-input {
+  margin-top: -63px;
+}

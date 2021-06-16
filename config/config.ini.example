@@ -1,0 +1,21 @@
+# The values provided here are for development only
+# sensitive production values must be passed from env
+# this is not a place for mainnet private keys
+
+production false
+
+arangodb-url http://root:birthday@localhost:8529/myNewDatabase
+# Good thing is to not use /tmp, because it will be gone after a system restart
+file-storage-path /tmp/cerealia-storage
+
+# this is a token for testing (dev environment)
+rollbar 110c04716baa4071a7b22e94900f073e
+
+# testnet master wallet access secret. Used for creation of new wallets
+stellar-master-secret SAHMDCRMCKGGMFENBKSUVYNMTM2GGNPR7DALQZ4SE6IIX2XJWJ6OQ4PG
+# stellar network name
+stellar-network horizon-test
+
+# Trade smart contract lock time in seconds. Default is 4 minutes: 60 * 4 = 240
+tx-source-acc-lock-duration 240
+

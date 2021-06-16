@@ -1,0 +1,10 @@
+// @flow
+
+export type ModalPropsType = {
+  visible: boolean,
+  onCloseModal: Function
+}
+
+export type StageModalPropsType = ModalPropsType & {
+  stageIdx: number
+}

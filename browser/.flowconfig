@@ -1,0 +1,56 @@
+[version]
+>=0.95.1
+
+[declarations]
+# moving this to untyped speeds up a bit
+.*node_modules/.*
+
+[ignore]
+.*node_modules.*node_modules.*
+.*node_modules.*test.*
+.*node_modules.*\.spec\..*
+.*node_modules/.*/locales?/.*
+.*/node_modules/graphql/.*
+.*/build/.*
+.*css
+
+.*/src/registerServiceWorker\.js
+.*/src/setupTests\.js
+.*/src/index\.js
+.*/src/graphql/test/client-mock\.js
+.*/src/graphql/test/resolver\.js
+
+[untyped]
+# TODO - try to remove after graphql update
+.*/node_modules/graphql/utilities/buildASTSchema.js.flow
+
+[include]
+./src
+
+[libs]
+
+[lints]
+# all=off by default
+all=warn
+untyped-type-import=error
+# TODO - enable this
+unclear-type=off
+
+[options]
+esproposal.decorators=ignore
+suppress_type=$FlowFixMe
+suppress_comment=\\(.\\|\n\\)*\\$FlowExpectError
+suppress_comment=\\(.\\|\n\\)*\\$FlowFixMe\\($\\|[^(]\\|(\\(<VERSION>\\)?)\\)
+suppress_comment=\\(.\\|\n\\)*\\$FlowIssue\\((\\(<VERSION>\\)?)\\)?:? #[0-9]+
+module.file_ext=.js
+module.file_ext=.mjs
+module.file_ext=.jsx
+module.file_ext=.json
+
+[strict]
+nonstrict-import
+untyped-import
+untyped-type-import
+unsafe-getters-setters
+# Triggers an error when using Object, Function, or any in a type annotation.
+unclear-type

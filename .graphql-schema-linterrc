@@ -1,0 +1,10 @@
+{
+  "rules": [
+    "defined-types-are-used",
+    "deprecations-have-a-reason",
+    "fields-are-camel-cased",
+    "relay-connection-types-spec",
+    "types-are-capitalized",
+    "types-have-descriptions"
+  ]
+}

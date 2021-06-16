@@ -1,0 +1,14 @@
+[
+  {
+    "_from": "docs/aaa1",
+    "_to": "trade_offers/1"
+  },
+  {
+    "_from": "docs/aaa2",
+    "_to": "trade_offers/2"
+  },
+  {
+    "_from": "docs/aaa3",
+    "_to": "trade_offers/3"
+  }
+]

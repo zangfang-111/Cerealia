@@ -1,0 +1,141 @@
+.admin-panel{
+  @include themify($themes) {
+    background-color: themed('side-menu-admin-bg-color');
+  }
+  & > div:not(.side-menu-item) {
+    &.active, &:hover {
+      @include themify($themes) {
+        background-color: themed('side-menu-admin-active-bg-color');
+      }
+    }
+  }
+}
+
+.main-panel{
+  @include themify($themes) {
+    background-color: themed('side-menu-bg-color');
+  }
+  & > div:not(.side-menu-item) {
+    &.active, &:hover{
+      @include themify($themes) {
+        background-color: themed('side-menu-active-bg-color');
+      }
+    }
+  }
+}
+
+.side-menu {
+  & > div {
+    width: inherit; /*inherited and not auto/col-12 because the item has position fixed*/
+    overflow-y: auto;
+    display: block;
+    flex-direction: column;
+    align-items: flex-end;
+    -webkit-transition: width 0.2s; /* Safari */
+    transition: width 0.2s;
+    position: fixed;
+    height: 100%;
+    position: fixed;
+    z-index:99;
+    padding-top: $header-height;
+
+    & > div {
+      @include themify($themes) {
+        color: themed('side-menu-content');
+      }
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      width: $link-tag-width;
+      min-height: $side-menu-height;
+      padding: 10px 0px;
+
+      & > a, & > i {
+        @include themify($themes) {
+          color: themed('side-menu-content');
+        }
+        font-size: 0.85rem;
+        padding: 6% 0 6% 48%;
+      }
+      .submenu {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        text-align: left;
+        padding: 0px 12px 0 32%;
+        & > a {
+          @include themify($themes) {
+            color: themed('side-menu-content');
+          }
+          margin-bottom: 7px;
+          line-height: 1.1em;
+          &:hover {
+            @include themify($themes) {
+              color: themed('side-menu-content');
+            }
+          }
+        }
+      }
+    }
+
+    &.moderator {
+      @include themify($themes) {
+        background-color: themed('brand-critical') !important;
+      }
+    }
+
+    @media screen and (max-width: 1150px) {
+      // width: 350px;
+
+      & > div {
+        a {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-left: 0;
+          padding: $side-menu-small-padding;
+
+          span {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+.settings-popover{
+  display: flex;
+  flex-direction: column;
+  & > a {
+    @include themify($themes) {
+      color: themed('brand-text');  
+    }
+    margin-bottom: 7px;
+    &:hover {
+      @include themify($themes) {
+        color: themed('brand-title');
+      }
+    }
+  }
+}
+
+.side-menu-item{
+  bottom: 0;
+  font-size: 12px;
+  height: 32px !important;
+  @include themify($themes) {
+    color: themed('brand-label') !important;
+  }
+  position: fixed;
+  width: inherit !important;
+  text-align: center;
+  margin: 0 auto;
+  cursor: default;
+}
+
+@media screen and (max-height: 720px) {
+  .side-menu-item{
+    display: none !important;
+  }
+}

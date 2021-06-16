@@ -1,0 +1,19 @@
+.view-container {
+  display: flex;
+  @include themify($themes) {
+    background-color: themed('home-background');  
+  }
+  min-height: calc(#{$standard-height} - #{$header-height});
+}
+
+.view-right {
+  width: 100%;
+  overflow: auto;
+  position: relative;
+  box-sizing: border-box;
+  padding-top: $header-height;
+  height: $standard-height;
+  @include themify($themes) {
+    color: themed('brand-text');
+  }
+}

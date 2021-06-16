@@ -1,0 +1,513 @@
+"Query defines all possible query types; Should be immutable"
+type Query {
+  "query single user by id; gets current user when id is null"
+  user(id: ID): User
+  "returns only approved users"
+  users: [User!]!
+  organizations: [Organization!]!
+   "returns all users"
+  adminUsers: [AdminUser!]!
+  tradeTemplates: [TradeTemplate!]!
+  trade(id: ID!): Trade
+  trades: [Trade!]!
+
+  tradeOffer(id: ID!): TradeOffer
+  tradeOffers: [TradeOffer!]!
+  "Retrieve current user's public key for this trade"
+
+  notifications(from: Uint!): [Notification!]!
+  notificationsTrade(id: String!): [Notification!]!
+
+  stellarNet: StellarNet
+  adminTrades: [Trade!]!
+}
+
+"""
+The mutation type, represents all updates we can make to our data.
+Principles:
++ Name mutation by the resource first and order them automatically
++ mutations should provide user/business-level errors via a
+  userErrors field on the mutation payload
+These operations change the state of the database
+"""
+type Mutation {
+  userSignup(input: NewUserInput): Int
+  userLogin(input: UserLoginInput!): AuthUser
+  userPasswordChange(input: ChangePasswordInput!): Int
+  userEmailChange(input: [Email!]!): Int
+  userProfileUpdate(input: UserProfileInput!): User
+  organizationCreate(input: OrgInput!): Organization
+
+  tradeCreate(input: NewTradeInput!) : Trade
+  tradeStageAddReq(input: NewStageInput!, signedTx: String!, withApproval: Boolean!): TradeStageAddReq
+  tradeStageAddReqApprove(id: TradeStagePath!, signedTx: String!,): TradeStage
+  tradeStageAddReqReject(id: TradeStagePath!, signedTx: String!, reason: String!): Int
+
+  tradeStageDelReq(id: TradeStagePath!, reason: String!): ApproveReq
+  tradeStageDelReqApprove(id: TradeStagePath!): ApproveReq
+  tradeStageDelReqReject(id: TradeStagePath!, reason: String!): Int
+
+  tradeStageCloseReq(id: TradeStagePath!, signedTx: String!, reason: String!): ApproveReq
+  tradeStageCloseReqApprove(id: TradeStagePath!, signedTx: String!): ApproveReq
+  tradeStageCloseReqReject(id: TradeStagePath!, signedTx: String!, reason: String!): Int
+  tradeStageSetExpireTime(id: TradeStagePath!, expiresAt: String!): Int
+
+  tradeCloseReq(id: String!, reason: String!, signedTx: String!): ApproveReq
+  tradeCloseReqApprove(id: String!, signedTx: String!): ApproveReq
+  tradeCloseReqReject(id: String!, reason: String!, signedTx: String!): Int
+
+  tradeStageDocApprove(id: TradeStageDocPath!, signedTx: String!): TradeStageDoc
+  tradeStageDocReject(id: TradeStageDocPath!, signedTx: String!, reason: String!): Int
+
+  tradeOfferCreate(input: TradeOfferInput!): TradeOffer
+  tradeOfferClose(id: String!): Int
+
+  notificationDismiss(id: String!): Int
+
+  mkTradeStageDocTx(id: TradeStageDocPath!, operationType: Approval!, expiresAt: Time): String!
+  mkTradeStageCloseTx(id: TradeStagePath!, operationType: Approval!): String!
+  "creates a new trade stage doc entry"
+  mkTradeStageAddTx(id: TradeStagePath!, operationType: Approval!): String!
+  mkTradeCloseTx(id: String!, operationType: Approval!): String!
+
+  ### Admin mutations ###
+
+  adminApproveUser(id: String!, status: SimpleApproval!, reason: String): AccessApproval
+}
+
+#####################
+#   SCALARS
+
+"Email field"
+scalar Email
+"Time field"
+scalar Time
+"Telephone number"
+scalar Telephone
+"Hash digest of file or other data. Presented as a Hex string"
+scalar Hash
+"Unsigned number"
+scalar Uint
+
+#####################
+#   ENUMS
+
+"Available user role options for authorization"
+enum UserRole {
+  "Trader is the participant of a trade. Can act on trade."
+  trader
+  "Moderator has supervisor privileges for trade"
+  moderator
+}
+
+"Approval status of a trade or a stage"
+enum Approval {
+  nil
+  pending
+  expired
+  rejected
+  approved
+  submitted
+}
+
+"Moderating status of a trade or a stage"
+enum DoneStatus {
+  nil
+  doing
+  done
+}
+
+"SimpleApproval is a basic status for approvals"
+enum SimpleApproval {
+  rejected
+  approved
+}
+
+"Type of user that participates in trade"
+enum TradeActor {
+  "No Owner"
+  n
+  "Buyer"
+  b
+  "Seller"
+  s
+  "Moderator"
+  m
+}
+
+"TxTradeEntity enums for transaction build"
+enum TxTradeEntity {
+   stage_doc
+   stage_closeReqs
+   stage_add
+   trade_closeReqs
+}
+
+"Is it a firm offer or just a quote"
+enum OfferPriceType {
+  firm
+  quote
+}
+
+"trading incoterm"
+enum Incoterm {
+  CAF
+  CFR
+  CFRC
+  CIF
+  CIFFO
+  CNF
+  CNFFO
+  DEL
+  FOB
+}
+
+enum Currency {
+  USD
+  RUB
+  EUR
+  TRY
+  UAH
+  CNY
+}
+
+enum NotifType {
+  "triggered when a user perform some action and this triggers a notification for other users"
+  action
+  "triggered by a system when there is something to be do (eg documenet approval is close to expire)"
+  alert
+}
+
+#####################
+#   Input types
+
+"New user input data"
+input NewUserInput {
+  firstName: String!
+  lastName:  String!
+  email:     Email!
+  password:  String!
+  avatar:    String
+  publicKey: String!
+  biography: String
+  orgID:     String!
+  orgRole:   String!
+}
+
+"User data for logging in"
+input UserLoginInput {
+  email:    Email!
+  password: String!
+}
+
+"Trade creation fields"
+input NewTradeInput {
+  templateID:   ID!
+  name:         String!
+  sellerID:     ID!
+  buyerID:      ID!
+  description:  String
+  tradeOfferID: String
+}
+
+"Context of a trade stage"
+input TradeStagePath {
+  tid:      ID!
+  stageIdx: Uint!
+}
+
+"Context of a document"
+input TradeStageDocPath {
+  tid:          ID!
+  stageIdx:     Uint!
+  stageDocIdx:  Uint!
+  stageDocHash: Hash!
+}
+
+"New trade fields"
+input NewStageInput {
+  tid:         ID!
+  owner:       String!
+  name:        String!
+  description: String!
+  reason:      String!
+}
+
+"Password change data"
+input ChangePasswordInput {
+  oldPassword: String!
+  newPassword: String!
+}
+
+"Organization input data"
+input OrgInput {
+  name: String!
+  address: String!
+  telephone: Telephone!
+  email: Email!
+}
+
+"User orgMap input"
+input UserOrgMapInput {
+  id:  String!
+  role: String!
+}
+
+"User Profile update data"
+input UserProfileInput {
+  firstName: String!
+  lastName:  String!
+  orgMap:    [UserOrgMapInput!]
+  biography: String!
+}
+
+"trade offer input data"
+input TradeOfferInput {
+  price:        Float!
+  priceType:    OfferPriceType!
+  isSell:       Boolean!
+  currency:     Currency!
+  expiresAt:    Time
+  commodity:    String!
+  comType:      [String!]!
+  quality:      String!
+  orgID:        String!
+  origin:       String!
+  isAnonymous:  Boolean!
+  incoterm:     Incoterm!
+  marketLoc:    String!
+  vol:          Int!
+  shipment:     [Time!]!
+  note:         String!
+  docID:        String
+}
+
+#####################
+#   Resource types
+
+"User data"
+type User {
+  id:        ID!
+  firstName: String!
+  lastName:  String!
+  emails:    [Email!]
+  roles:     [UserRole!]!
+  avatar:    String!
+  orgMap:    [UserOrgMap!]
+  createdAt: Time!
+  biography: String!
+  pubKey:    String @deprecated
+}
+
+"AuthUser; after user login, backend sends user token"
+type AuthUser {
+  id:    ID!
+  token: String!
+}
+
+"AdminUser; User with special Admin information"
+type AdminUser {
+  # ... on User
+  user:       User
+  approvals:   [AccessApproval!]!
+}
+
+type StageModerator {
+  user:      User
+  createdAt: Time
+}
+
+"User organization with role"
+type UserOrgMap {
+  org:  Organization!
+  role: String!
+}
+
+"Organization data"
+type Organization {
+  id:       ID!
+  name:     String!
+  address:  String!
+  telephone: Telephone!
+  email:    Email!
+}
+
+"AccessAproval is a record representing a user approval for some access"
+type AccessApproval {
+  status:    SimpleApproval!
+  approver:  User!
+  reason:    String
+  createdAt: Time!
+}
+
+"""
+Approval request that can be approved or rejected
+Used for creating stages and closing trades
+"""
+type ApproveReq {
+  status:     Approval!
+  reqActor:   TradeActor!
+  reqBy:      User!
+  reqAt:      Time!
+  reqTx:  Hash
+  reqReason:  String!
+  approvedBy: User
+  approvedAt: Time
+  approvedTx: Hash
+  rejectReason:   String
+}
+
+"Trade information"
+type Trade {
+  id:                ID!
+  name:              String!
+  description:       String!
+  template:          TradeTemplate!
+  buyer:             User!
+  seller:            User!
+  scAddr:            Hash!
+  stages:            [TradeStage!]
+  stageAddReqs:      [TradeStageAddReq!]
+  closeReqs:         [ApproveReq!]!
+  createdBy:         User!
+  createdAt:         Time!
+  tradeOffer:        TradeOffer
+  moderating:        DoneStatus!
+  actorWallet:       TradeActorWallet
+}
+
+"Trade stage add request"
+type TradeStageAddReq {
+  name:              String!
+  description:       String!
+  owner:             TradeActor!
+
+  # ApproveReq fields
+  status:       Approval!
+  reqActor:     TradeActor!
+  reqBy:        User!
+  reqAt:        Time!
+  reqReason:    String!
+  approvedBy:   User
+  approvedAt:   Time
+  rejectReason: String
+}
+
+"Trade stage is a single step of a trade"
+type TradeStage {
+  name:        String!
+  description: String!
+  "index of addRequest of stage in trade"
+  addReqIdx:   Int!
+  owner:       TradeActor!
+  expiresAt:   Time
+  docs:        [TradeStageDoc!]!
+  delReqs:     [ApproveReq!]!
+  """
+  Close requests. Can be closed only if stage is not deleted
+  To compute the status of the stage you should use the following procedure.
+  If `closeReqs` is empty then check then check the last element of delReqs.
+  If it is approved then the stage is deleted.
+  Else check the last element in `closeReq`.
+  """
+  closeReqs:   [ApproveReq!]!
+  moderator:   StageModerator
+ }
+
+"""
+Trade stage document
+Represents a single aggreement of a trade stage
+Approval status is required for stage completeness
+"""
+type TradeStageDoc {
+  doc:         Doc
+  reqTx:       Hash
+  status:      Approval!
+  approvedBy:  User
+  approvedAt:  Time
+  approvedTx:  Hash
+  expiresAt:   Time!
+  rejectReason: String
+}
+
+"Document; Represents a single document saved to file"
+type Doc {
+  id:        ID!
+  hash:      Hash!
+  name:      String!
+  note:      String!
+  type:      String
+  url:       String!
+  createdBy: User!
+  createdAt: Time!
+}
+
+"Trade template; Prefabricated blueprint for faster trade creation"
+type TradeTemplate {
+  id:          ID!
+  name:        String!
+  description: String!
+  stages:      [TradeStageTemplate!]!
+}
+
+"Trade stage template; Prefabricated blueprint for faster stage creation"
+type TradeStageTemplate {
+  name:         String!
+  description:  String!
+  owner:        TradeActor!
+}
+
+"trade offer object"
+type TradeOffer {
+  id:        ID!
+  price:     Float!
+  isSell:    Boolean!
+  priceType: OfferPriceType!
+  currency:  Currency!
+  createdBy: User!
+  createdAt: Time!
+  expiresAt: Time
+  closedAt:  Time
+  org:       Organization
+  isAnonymous: Boolean!
+  "commodity type"
+  commodity: String!
+  comType:   [String!]!
+  quality:   String!
+  origin:    String!
+  incoterm:  Incoterm!
+  marketLoc: String!
+  "volumen - quantity"
+  vol:       Int!
+  "Shipment is a tuple representing: from-to"
+  shipment:  [Time!]!
+  note:      String!
+  terms:     Doc
+}
+
+"StellarNet; stellar network infomation, we provide it to frontend"
+type StellarNet {
+  name:       String!
+  url:        String!
+  passphrase: String!
+}
+
+"Notification object"
+type Notification {
+  id:           ID!
+  createdAt:    Time!
+  triggeredBy:  User
+  receiver:     [ID!]!
+  type:         NotifType!
+  dismissed:    [ID!]!
+  entityID:     String!
+  msg:          String!
+  action:       Approval!
+}
+
+"TradeActorWallet; data about an actor in a trade"
+type TradeActorWallet {
+  pubKey:   String!
+  keyPath:  String!
+  walletID: String!
+}

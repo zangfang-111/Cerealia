@@ -1,0 +1,34 @@
+.button-container {
+
+  button {
+    min-width: 160px;
+    height: 44px;
+    @include themify($themes) {
+      border-color: themed('down-load');
+    }
+    border-radius: $button-radius;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &.primary {
+      @include themify($themes) {
+        background-color: themed('down-load');
+      }
+    }
+
+    &.others {
+      @include themify($themes) {
+        background-color: themed('button-add-new-bg');
+      }
+    }
+
+    &[disabled] {
+      @include themify($themes) {
+        background-color: themed('button-disabled-color');
+      }
+      cursor: not-allowed;
+    }
+  }
+}

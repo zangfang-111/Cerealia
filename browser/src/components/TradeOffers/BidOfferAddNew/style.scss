@@ -1,0 +1,122 @@
+.bid-add-new {
+  padding: 43px;
+  padding-top: 20px;
+
+  .select-input {
+    width: 100%;
+  }
+  .select-cover {
+    width: 25%;
+    margin-right: 15px;
+  }
+
+  p {
+    @include themify($themes) {
+      color: themed('brand-text');
+    }
+  }
+
+  .right-margin {
+    margin-right: 50px !important;
+  }
+
+  .bid-offer-title {
+    margin-bottom: 20px;
+  }
+  .order-type {
+    width: 78%;
+    display: flex;
+  }
+  .goods-container {
+    margin-bottom: 15px;
+
+    .name-type-qty {
+      display: flex;
+
+      .select-name {
+        width: 25%;
+        margin-right: 15px;
+        margin-bottom: 0 !important;
+      }
+      .select-type {
+        width: 25%;
+        margin-right: 15px;
+        margin-bottom: 0 !important;
+      }
+      .input-quality {
+        width: 25%;
+        margin-right: 15px;
+        margin-bottom: 0 !important;
+      }
+    }
+    .origin-cpy-expire {
+      display: flex;
+    }
+  }
+  .payment-container {
+    margin-bottom: 15px;
+    .payment-cover {
+      display: flex;
+    }
+
+    .price {
+      input {
+        --webkit-appearance: none;
+      }
+      width: 15%;
+      margin-bottom: 0 !important;
+      margin-right: 20px;
+    }
+    .payment-terms {
+      width: 50%;
+    }
+  }
+  .basis-container {
+    margin-bottom: 15px;
+
+    .select-section {
+      display: flex;
+    }
+  }
+  .qty-smt-status {
+    display: flex;
+    margin-bottom: 15px;
+
+    .quantity-cover {
+      width: 21%;
+      margin-right: 15px;
+    }
+    .shipment-cover {
+      margin-bottom: 0px;
+      width: 30%;
+    }
+    .quantity {
+      display: flex;
+    }
+    .quanty-input {
+      width: 70%;
+      display: flex;
+      align-items: center;
+      margin-right: 15px;
+    }
+    .status-cover {
+      width: 15%;
+    }
+  }
+  .submit-btn {
+    width: 20%;
+    height: 40px;
+    color: black;
+    @include themify($themes) {
+      background-color: themed('button-add-new-bg');
+    }
+    border-radius: 20px;
+    border: none;
+    font-weight: bold;
+  }
+  .ant-switch-checked {
+    @include themify($themes) {
+      background-color: themed('brand-title');
+    }
+  }
+}

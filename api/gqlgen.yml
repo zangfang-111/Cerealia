@@ -1,0 +1,59 @@
+# Refer to https://gqlgen.com/config/  for detailed .gqlgen.yml documentation.
+# Check ../go-lib/model/README.md for more information about the structure.
+
+schema: websrv_schema.graphql
+
+resolver:
+  filename: ../go-lib/resolver/resolver.go
+  type: resolver
+
+# generated interfaces + executor
+exec:
+  filename: ../go-lib/gql/graphql_gen.go
+
+model:
+  filename: ../go-lib/model/models_gql_gen.go
+
+models:
+  User:
+    model: bitbucket.org/cerealia/apps/go-lib/model.User
+  AccessApproval:
+    model: bitbucket.org/cerealia/apps/go-lib/model.AccessApproval
+  Organization:
+    model: bitbucket.org/cerealia/apps/go-lib/model.Organization
+  ApproveReq:
+    model: bitbucket.org/cerealia/apps/go-lib/model.ApproveReq
+  Trade:
+    model: bitbucket.org/cerealia/apps/go-lib/model.Trade
+  TradeStage:
+    model: bitbucket.org/cerealia/apps/go-lib/model.TradeStage
+  TradeStageAddReq:
+    model: bitbucket.org/cerealia/apps/go-lib/model.TradeStageAddReq
+  TradeStageDoc:
+    model: bitbucket.org/cerealia/apps/go-lib/model.TradeStageDoc
+  TradeTemplate:
+    model: bitbucket.org/cerealia/apps/go-lib/model.TradeTemplate
+  TradeStageTemplate:
+    model: bitbucket.org/cerealia/apps/go-lib/model.TradeStageTemplate
+  TradeOffer:
+    model: bitbucket.org/cerealia/apps/go-lib/model.TradeOffer
+  StageModerator:
+    model: bitbucket.org/cerealia/apps/go-lib/model.StageModerator
+  Doc:
+    model: bitbucket.org/cerealia/apps/go-lib/model.Doc
+  Notification:
+    model: bitbucket.org/cerealia/apps/go-lib/model.Notification
+  Email:
+    model: bitbucket.org/cerealia/apps/go-lib/model.Email
+  Telephone:
+    model: bitbucket.org/cerealia/apps/go-lib/model.Telephone
+  Time:
+    model: bitbucket.org/cerealia/apps/go-lib/model.Time
+  Hash:
+    model: bitbucket.org/cerealia/apps/go-lib/model.Hash
+  Uint:
+    model: bitbucket.org/cerealia/apps/go-lib/model.Uint
+
+
+# Optional, turns on binding to field names by tag provided
+struct_tag: json

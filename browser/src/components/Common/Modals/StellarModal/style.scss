@@ -1,0 +1,16 @@
+.stellar-modal-container {
+  .invalid {
+    color: orangered;
+  }
+  button {
+    float: right;
+    margin-top: 30px;
+  }
+  .success {
+    margin: 10px 10px;
+    color: green;
+    .green-tick {
+      margin-left: 20px;
+    }
+  }
+}

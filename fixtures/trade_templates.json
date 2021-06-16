@@ -1,0 +1,153 @@
+[
+  {
+    "_key": "1471516",
+    "name": "MVP template",
+    "description": "this template is for mvp template, include 12 stages",
+    "stages": [
+      {
+        "name": "trade contract",
+        "description": "",
+        "owner": "n"
+      },
+      {
+        "name": "stage 1",
+        "description": "Seller to charter the vessel and send vessel's nomination",
+        "owner": "s"
+      },
+      {
+        "name": "stage 2",
+        "description": "Buyer to send documentary instructions",
+        "owner": "b"
+      },
+      {
+        "name": "stage 3",
+        "description": "Seller to send draft cargo documents",
+        "owner": "s"
+      },
+      {
+        "name": "stage 4",
+        "description": "Buyer to approve or decline draft cargo documents",
+        "owner": "b"
+      },
+      {
+        "name": "stage 5",
+        "description": "Seller to load goods onto the vessel and send a notice of appropriation...",
+        "owner": "s"
+      },
+      {
+        "name": "stage 6",
+        "description": "Buyer to nominate agent at discharge port, afterNOA is sent",
+        "owner": "b"
+      },
+      {
+        "name": "stage 7",
+        "description": "Buyer to approve or decline NOA or cargo docs",
+        "owner": "b"
+      },
+      {
+        "name": "stage 8",
+        "description": "When buyer approves the cargo docs, he needs to effect the payment",
+        "owner": "b"
+      },
+      {
+        "name": "stage 9",
+        "description": "If there is a demurrage, seller to send all supporting docs",
+        "owner": "s"
+      },
+      {
+        "name": "stage 10",
+        "description": "Buyer to approve or decline demurrage supporting docs",
+        "owner": "b"
+      },
+      {
+        "name": "stage 11",
+        "description": "When buyer approves demurrage supporting docs, he needs to effect the payment within 2 banking days.",
+        "owner": "b"
+      },
+      {
+        "name": "stage 12",
+        "description": "After seller gets the demurrage payment, he declares end of this contract",
+        "owner": "s"
+      }
+    ]
+  },
+  {
+    "_key": "1471517",
+    "name": "FOB execution template",
+    "description": "A FOB contract execution template, includes 14 stages",
+    "stages": [
+      {
+        "name": "trade contract",
+        "description": "",
+        "owner": "n"
+      },
+      {
+        "name": "stage 1",
+        "description": "Buyer to charter the vessel and give seller 7 days pre-advise of vessel’s nomination prior to vessel’s arrival to the port of loading",
+        "owner": "b"
+      },
+      {
+        "name": "stage 2",
+        "description": "Seller to nominate agent at load port max. 2 days after vessel nomination",
+        "owner": "s"
+      },
+      {
+        "name": "stage 3",
+        "description": "Buyer to provide confirmations that Master served 7/5/3 days arrival notices via the agency at loading port",
+       "owner": "b"
+      },
+      {
+        "name": "stage 4",
+        "description": "Buyer to send documentary instructions latest 3 days prior to vessel’s arrival at the port of loading",
+        "owner": "b"
+      },
+      {
+        "name": "stage 5",
+        "description": "Seller to send draft cargo documents and being approved in 2 days",
+        "owner": "s"
+      },
+      {
+        "name": "stage 6",
+        "description": "Seller to load goods onto the vessel and send a notice of appropriation (NOA)",
+        "owner": "s"
+      },
+      {
+        "name": "stage 7",
+        "description": "Seller to present all final digital cargo documents",
+        "owner": "s"
+      },
+      {
+        "name": "stage 8",
+        "description": "Buyer to effect the payment within 2 banking days after presentation of final digital cargo documents. Payment to be effected in any case before breaking bulk",
+        "owner": "b"
+      },
+      {
+        "name": "stage 9",
+        "description": "If there is a demurrage/dispatch (D/D), buyer to send all supporting docs and being approved in 10 days",
+        "owner": "b"
+      },
+      {
+        "name": "stage 10",
+        "description": "When seller approves D/D supporting docs, he or buyer (depending if there is D/D) needs to effect the payment max in 30 banking days.",
+        "owner": "s"
+      },
+      {
+        "name": "stage 11",
+        "description": "After D/D are settled/paid, the party, receiving the money, declares end of this contract",
+        "owner": "s"
+      }
+    ]
+  },
+  {
+    "_key": "1471792",
+    "name": "Empty template",
+    "description": "Template without stages",
+    "stages": [
+      {
+        "name": "trade contract",
+        "description": "",
+        "owner": "n"
+      }
+    ]
+  }
+]

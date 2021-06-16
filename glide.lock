@@ -1,0 +1,252 @@
+hash: 720eec4710fc771ed121e37f4c9b300076ea6d3384ed4162715a4e73c09f81cb
+updated: 2019-04-18T09:19:17.3311478+02:00
+imports:
+- name: github.com/99designs/gqlgen
+  version: 010a79b66f08732cb70d133dcab297a8ee895572
+  subpackages:
+  - complexity
+  - graphql
+  - graphql/introspection
+  - handler
+- name: github.com/agl/ed25519
+  version: 5312a61534124124185d41f09206b9fef1d88403
+- name: github.com/agnivade/levenshtein
+  version: 185086b29d40851ac6c41150d8e497ea2b9520e9
+- name: github.com/arangodb/go-driver
+  version: 88874b717ad9582bb274e06a2ff75428fe66c7cc
+  subpackages:
+  - cluster
+  - http
+  - util
+- name: github.com/arangodb/go-velocypack
+  version: 7896a965b4adc3bcc556b17d494537e30b4c1bd7
+- name: github.com/asaskevich/govalidator
+  version: f9ffefc3facfbe0caee3fea233cbb6e8208f4541
+- name: github.com/davecgh/go-spew
+  version: d8f796af33cc11cb798c1aaeb27a4ebc5099927d
+  subpackages:
+  - spew
+- name: github.com/dgrijalva/jwt-go
+  version: 06ea1031745cb8b3dab3f6a236daf2b0aa468b7e
+  subpackages:
+  - request
+- name: github.com/facebookgo/clock
+  version: 600d898af40aa09a7a93ecb9265d87b0504b6f03
+- name: github.com/facebookgo/grace
+  version: 75cf19382434e82df4dd84953f566b8ad23d6e9e
+  subpackages:
+  - gracehttp
+  - gracenet
+- name: github.com/facebookgo/httpdown
+  version: 5979d39b15c26299dc282711b0d65b113daccea6
+- name: github.com/facebookgo/stack
+  version: 751773369052141c013c6e827a71e8f35c07879c
+- name: github.com/facebookgo/stats
+  version: 1b76add642e42c6ffba7211ad7b3939ce654526e
+- name: github.com/globalsign/mgo
+  version: eeefdecb41b842af6dc652aaea4026e8403e62df
+  subpackages:
+  - bson
+  - internal/json
+- name: github.com/go-errors/errors
+  version: a6af135bd4e28680facf08a3d206b454abc877a4
+- name: github.com/go-openapi/analysis
+  version: e2f3fdbb7ed0e56e070ccbfb6fc75b288a33c014
+  subpackages:
+  - internal
+- name: github.com/go-openapi/errors
+  version: 7a7ff1b7b8020f22574411a32f28b4d168d69237
+- name: github.com/go-openapi/jsonpointer
+  version: ef5f0afec364d3b9396b7b77b43dbe26bf1f8004
+- name: github.com/go-openapi/jsonreference
+  version: 8483a886a90412cd6858df4ea3483dce9c8e35a3
+- name: github.com/go-openapi/loads
+  version: 74628589c3b94e3526a842d24f46589980f5ab22
+- name: github.com/go-openapi/runtime
+  version: 41e24cc66d7af6af39eb9b5a6418e901bcdd333c
+- name: github.com/go-openapi/spec
+  version: 53d776530bf78a11b03a7b52dd8a083086b045e5
+- name: github.com/go-openapi/strfmt
+  version: bb512950308460a5584a64228c227807cea1e4bd
+- name: github.com/go-openapi/swag
+  version: b28747f5c7f9eb6b0b82d2f87f365fff72b535c9
+- name: github.com/go-openapi/validate
+  version: 5b1623be7460f5a3967a82c00d518048fb190f5e
+- name: github.com/go-ozzo/ozzo-routing
+  version: 9dcabc145f0d565b5219e2fd72c3da04876980b7
+  subpackages:
+  - content
+  - cors
+  - fault
+  - file
+  - slash
+- name: github.com/go-stack/stack
+  version: 2fee6af1a9795aafbe0253a0cfbdf668e1fb8a9a
+- name: github.com/golang/gddo
+  version: 9bd4a32950217197bb319565e843237cca7f85d2
+  subpackages:
+  - httputil/header
+- name: github.com/google/uuid
+  version: d460ce9f8df2e77fb1ba55ca87fafed96c607494
+- name: github.com/gorilla/context
+  version: 08b5f424b9271eedf6f9f0ce86cb9396ed337a42
+- name: github.com/gorilla/websocket
+  version: 7c8e298727d149d7c329b4dec7e94e1932ac5c11
+- name: github.com/hashicorp/golang-lru
+  version: 20f1fb78b0740ba8c3cb143a61e86ba5c8669768
+  subpackages:
+  - simplelru
+- name: github.com/kardianos/osext
+  version: ae77be60afb1dcacde03767a8c37337fad28ac14
+- name: github.com/kr/pretty
+  version: 73f6ac0b30a98e433b289500d779f50c1a6f0712
+- name: github.com/kr/text
+  version: e2ffdb16a802fe2bb95e2e35ff34f0e53aeef34f
+- name: github.com/lib/pq
+  version: 9eb73efc1fcc404148b56765b0d3f61d9a5ef8ee
+  subpackages:
+  - oid
+- name: github.com/mailru/easyjson
+  version: 60711f1a8329503b04e1c88535f419d0bb440bff
+  subpackages:
+  - buffer
+  - jlexer
+  - jwriter
+- name: github.com/manucorporat/sse
+  version: ee05b128a739a0fb76c7ebd3ae4810c1de808d6d
+- name: github.com/mattn/go-colorable
+  version: efa589957cd060542a26d2dd7832fd6a6c6c3ade
+- name: github.com/mattn/go-isatty
+  version: 3fb116b820352b7f0c281308a4d6250c22d94e27
+- name: github.com/mitchellh/mapstructure
+  version: d0303fe809921458f417bcf828397a65db30a7e4
+- name: github.com/mozillazg/go-unidecode
+  version: 8772af720c7f2f4d216cc73c5f23de17450dd008
+  subpackages:
+  - table
+- name: github.com/pborman/uuid
+  version: adf5a7427709b9deb95d29d3fa8a2bf9cfd388f1
+- name: github.com/pkg/errors
+  version: 856c240a51a2bf8fb8269ea7f3f9b046aadde36e
+- name: github.com/pmezard/go-difflib
+  version: 5d4384ee4fb2527b0a1256a821ebfc92f91efefc
+  subpackages:
+  - difflib
+- name: github.com/PuerkitoBio/purell
+  version: 44968752391892e1b0d0b821ee79e9a85fa13049
+- name: github.com/PuerkitoBio/urlesc
+  version: de5bf2ad457846296e2031421a34e2568e304e35
+- name: github.com/robert-zaremba/errstack
+  version: d8cf50e43e6a37dce50085df485e3325e0c7ec3b
+- name: github.com/robert-zaremba/flag
+  version: f382947c5b7c8b2fa055381e47e547b53af86e01
+- name: github.com/robert-zaremba/go-bat
+  version: 01f52daee1d8497fdf10083f3769e64582c2f13c
+- name: github.com/robert-zaremba/go-tty
+  version: a49e47f28136bfa4eeb77328529d374ed2fb9203
+- name: github.com/robert-zaremba/log15
+  version: 24b9e8e6ea9f6c515956830d2f6a97ff38008db3
+  subpackages:
+  - log15setup
+  - rollbar
+  - term
+- name: github.com/scale-it/go-web
+  version: 28f22eff7400b7a17eeee6df8c69456617a9413a
+  subpackages:
+  - handlers
+  - ozzohandlers
+- name: github.com/segmentio/go-loggly
+  version: 7a70408c3650c37ba8e58a934f686d0c44cb9b58
+- name: github.com/sirupsen/logrus
+  version: 070c81def33f6362a8267b6a4e56fb7bf23fc6b5
+  subpackages:
+  - hooks/test
+- name: github.com/spaolacci/murmur3
+  version: f09979ecbc725b9e6d41a297405f65e7e8804acc
+- name: github.com/stellar/go
+  version: 1d3d46259bacf567dd75feece3ecd994e9d93e49
+  subpackages:
+  - amount
+  - build
+  - clients/horizon
+  - crc16
+  - hash
+  - keypair
+  - network
+  - price
+  - protocols/horizon
+  - protocols/horizon/base
+  - strkey
+  - support/errors
+  - support/http/mutil
+  - support/log
+  - support/render/hal
+  - support/render/problem
+  - support/url
+  - xdr
+- name: github.com/stellar/go-xdr
+  version: 0bc96f33a18ef2f963e75431dbed042129eb421b
+  subpackages:
+  - xdr3
+- name: github.com/stretchr/objx
+  version: c61a9dfcced1815e7d40e214d00d1a8669a9f58c
+- name: github.com/stretchr/testify
+  version: 78018b09cde1da8ab313a2344fa4395b86026def
+  subpackages:
+  - assert
+  - mock
+- name: github.com/stvp/rollbar
+  version: 4a50daf855af93a350f2a6789101cd51955c88ca
+- name: github.com/vektah/gqlparser
+  version: 9541c8b6420ab8919446721a3d7bf1db3146a4dc
+  subpackages:
+  - ast
+  - gqlerror
+  - lexer
+  - parser
+  - validator
+  - validator/rules
+- name: github.com/vmihailenco/sasl
+  version: 2f13c189728a02f8cc31b3b9cc06047b383c21cc
+- name: golang.org/x/crypto
+  version: 74369b46fc6756741c016591724fd1cb8e26845f
+  subpackages:
+  - argon2
+  - bcrypt
+  - blake2b
+  - blake2s
+  - ed25519
+  - ed25519/internal/edwards25519
+  - ssh/terminal
+- name: golang.org/x/net
+  version: b60f3a92103dfd93dfcb900ec77c6d0643510868
+  subpackages:
+  - context
+  - context/ctxhttp
+  - http2
+  - http2/hpack
+  - idna
+  - internal/timeseries
+  - lex/httplex
+  - trace
+- name: golang.org/x/sys
+  version: 2320a9c15898af1b1b24f99700d5c1e957f9d8cf
+  subpackages:
+  - cpu
+  - unix
+  - windows
+- name: golang.org/x/text
+  version: 1cbadb444a806fd9430d14ad08967ed91da4fa0a
+  subpackages:
+  - secure/bidirule
+  - transform
+  - unicode/bidi
+  - unicode/norm
+  - width
+- name: gopkg.in/check.v1
+  version: 788fd78401277ebd861206a03c884797c6ec5541
+- name: gopkg.in/yaml.v2
+  version: eb3733d160e74a9c7e442f435eb3bea458e1d19f
+testImports:
+- name: github.com/robert-zaremba/checkers
+  version: 148f66ee2a29d4dbf2e566d91289d29ee422ca1d

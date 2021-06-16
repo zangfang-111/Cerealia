@@ -1,0 +1,20 @@
+[
+  {
+    "id":"",
+    "name":"wrong template",
+    "description":"this template is an wrong template - which contains no trade contract",
+    "stages":[
+        {
+          "name": "stage 1",
+          "description": "",
+          "owner": "seller"
+        }
+    ]
+  },
+  {
+    "id":"",
+    "name":"empty template",
+    "description":"this template is empty and includes no stage data, for negative test",
+    "stages":[]
+  }
+]

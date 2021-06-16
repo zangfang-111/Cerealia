@@ -1,0 +1,90 @@
+FORMAT: 1A
+HOST: http://localhost:8000
+
+# Websrv API definition
+
+Cerealia Websrv is the primary service to handle external communication
+
+
+# Group Trade
+
+Resources related to trade objects
+
+
+## Trade Stage Doc [/v1/trades/stage-docs/{docID}]
+
++ Parameters
+
+    + docID: `1234` (string) - a Key in Docs collection.
+
+### Get Stage Document file [GET]
+
+Returns the file with a proper content-type.
+
++ Response 200
+
+
+## Trade Stage Doc Collection [/v1/trades/stage-docs]
+
+
+### Submit a Trade Stage Document [POST]
+Multipart form with the following `form-data` fields
+
++ Request (multipart/form-data; boundary=BOUNDARY)
+
+    + Attributes
+
+        + tid: "1234" (string, required)
+        + stageIdx: 1 (string, required)
+        + expiresAt: 2018-10-23T11:10:33.823Z (date, required)
+        + fileName: mycontract.pdf
+        + signedTx: AAAAAMGf7pIPglfeRK1ag6MU1B+eZd8btX1bsunYU/O3EZLNAAABkAAIt3wAAAABAAAAAAAAAAAAAAAEAAAAAQAAAADBn+6SD4JX3kStWoOjFNQfnmXfG7V9W7Lp2FPztxGSzQAAAAoAAAAHdHJhZGVJRAAAAAABAAAABzE5OTMxMzUAAAAAAQAAAADBn+6SD4JX3kStWoOjFNQfnmXfG7V9W7Lp2FPztxGSzQAAAAoAAAAKc3RhZ2VJbmRleAAAAAAAAQAAAAEzAAAAAAAAAQAAAADBn+6SD4JX3kStWoOjFNQfnmXfG7V9W7Lp2FPztxGSzQAAAAoAAAAIZG9jSW5kZXgAAAABAAAAAjIyAAAAAAABAAAAAMGf7pIPglfeRK1ag6MU1B+eZd8btX1bsunYU/O3EZLNAAAACgAAAAdkb2NIYXNoAAAAAAEAAAAJdGVzdF9oYXNoAAAAAAAAAAAAAAG3EZLNAAAAQCi+vtxcqn3WKzX2shMFZE8m5H7bjaY8nwUUehHS0tzgpiAN1WKBtL8mq7HkHlZy+w2i8GJ1b8/ILU1ztZSTxA4=
+
+    -----BOUNDARY
+    Content-Disposition: form-data; name="formfile[file]"; filename="mycontract.pdf"
+    Content-Type: application/pdf
+    Content-Transfer-Encoding: base64
+
+    /9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0a
+    HBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIy
+    MjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAABAAEDASIA
+    AhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAf/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFAEB
+    AAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AL+AD//Z
+    -----BOUNDARY
+
++ Response 201 (application/json)
+
+    + Attributes (TradeStageDoc)
+
+
+# Data Structures
+
+
+## User
+
++ id: `123` (string
++ firstName: Robert
++ lastName: Z
++ emails: r1@cerealia.ch, r2@cerealia.ch (array)
++ createdAt: `2018-08-11T08:40:51.620Z`
+
+## Doc
+
++ id:        21341
++ hash:      4A50FFFD57FFFDFFFDFFFDFFFD684BFFFDFFFD5C7530303030FFFDFFFD78
++ name:      Trade_contract2.txt
++ note:      Sending trade contract
++ type:      txt
++ url:       8422c127-cc92-11e8-91b3-54ee7535e88d.txt
++ createdBy: 1 (string)
++ createdAt: 2018-10-10T13:53:24.15945848Z
++ signedTx: txt
+
+## TradeStageDoc
+
++ doc (Doc) - linked document
++ status:      rejected
++ approvedBy (User) - user who approved
++ approvedAt:  2018-10-23T09:01:33.823Z
++ expiresAt:   2018-10-23T11:10:33.823Z
++ rejectReason: Error in second paragraph

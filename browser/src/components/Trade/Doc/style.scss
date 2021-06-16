@@ -1,0 +1,77 @@
+.document-detail {
+  @include themify($themes) {
+    background-color: themed('home-background');  
+  }
+  .doc-header {
+    display: flex;
+    width: 100%;
+    @include themify($themes) {
+      color: themed('brand-label');  
+    }
+  }
+  .doc-content {
+    @include themify($themes) {
+      border-bottom: 1px dashed themed('brand-label');
+    }
+    display: flex;
+    width: 100%;
+    @include themify($themes) {
+      color: themed('brand-label');  
+    }
+    padding: 10px 0;
+  }
+  .doc-title {
+    width: 200px;
+    padding-right: 20px;
+  }
+  .doc-submitted {
+    width: 150px;
+    padding-right: 20px;
+  }
+  .doc-status {
+    width: 200px;
+    .approved {
+      @include themify($themes) {
+        color: themed('approval-document-color');
+      }
+    }
+    .rejected {
+      @include themify($themes) {
+        color: themed('rejected-document-color');
+      }
+    }
+    padding-right: 20px;
+  }
+  .doc-action {
+    width: 100px;
+    p {
+      @include themify($themes) {
+        color: themed('brand-filler');
+      }
+    }
+    padding-right: 20px;
+  }
+  .doc-reason {
+    width: 150px;
+    padding-right: 20px;
+  }
+  .doc-expire {
+    width: 90px;
+  }
+
+  .doc-download {
+    @include themify($themes) {
+      color: themed('brand-title');
+    }
+    a {
+      @include themify($themes) {
+        color: themed('brand-title') !important;
+      }
+    }
+  }
+  .doc-name {
+    @include themify($themes) {
+      color: themed('down-load');  
+    }
+  }
+}

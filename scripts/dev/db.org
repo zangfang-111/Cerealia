@@ -1,0 +1,8 @@
+* remove / truncate
+
+truncate
+for (c of db._collections()) if(!c._name.startsWith('_')) {console.log('truncating ', c._name);  c.truncate()}
+
+dropping
+for (c of db._collections()) if(!c._name.startsWith('_')) {console.log('dropping ', c._name);  c.drop()}
+db._graphs.remove('graph_doc_to_trade')

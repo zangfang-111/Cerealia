@@ -1,0 +1,56 @@
+[
+  {
+    "_from": "docs/aaa1",
+    "_to": "trades/1993134",
+    "stageIdx": 0,
+    "stageDocIdx": 0
+  },
+  {
+    "_from": "docs/aaa2",
+    "_to": "trades/1993134",
+    "stageIdx": 0,
+    "stageDocIdx": 1
+  },
+  {
+    "_from": "docs/aaa3",
+    "_to": "trades/1993134",
+    "stageIdx": 1,
+    "stageDocIdx": 0
+  },
+  {
+    "_from": "docs/bbb1",
+    "_to": "trades/1993135",
+    "stageIdx": 0,
+    "stageDocIdx": 0
+  },
+  {
+    "_from": "docs/bbb2",
+    "_to": "trades/1993135",
+    "stageIdx": 1,
+    "stageDocIdx": 0
+  },
+  {
+    "_from": "docs/bbb3",
+    "_to": "trades/3155708",
+    "stageIdx": 0,
+    "stageDocIdx": 0
+  },
+  {
+    "_from": "docs/aaa5",
+    "_to": "trades/3155708",
+    "stageIdx": 1,
+    "stageDocIdx": 0
+  },
+  {
+    "_from": "docs/aaa4",
+    "_to": "trades/3155708",
+    "stageIdx": 1,
+    "stageDocIdx": 1
+  },
+  {
+    "_from": "docs/3470389",
+    "_to": "trades/1993134",
+    "stageIdx": 2,
+    "stageDocIdx": 0
+  }
+]

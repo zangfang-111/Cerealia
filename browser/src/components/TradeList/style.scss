@@ -1,0 +1,98 @@
+.trades-list {
+  padding: 36px 20% 0 42px;
+  .title {
+    font-size: 24px;
+    font-weight: 600;
+    @include themify($themes) {
+      color: themed('badge-icon');  
+    }
+    margin-bottom: 27px;
+  }
+
+  .trades-list-content {
+    min-height: 60vh;
+    .trade-card-body {
+      display: flex;
+      justify-content: space-between;
+      @include themify($themes) {
+        // color: themed('trade-content-color');  
+        background-color: themed('trade-content-color');
+      }
+      margin-bottom: 20px;
+      padding: 20px 35px;
+      border-radius: 4px;
+      box-shadow: 0 5px 25px rgba(56, 49, 100, 0.1);
+      & > div {
+        word-wrap: break-word !important;
+        padding-right: 20px;
+        @include themify($themes) {
+          color: themed('badge-icon');  
+        }
+        font-size: 14px;
+        p:nth-child(1) {
+          font-weight: 500;
+          line-height: 18px;
+          @include themify($themes) {
+            color: themed('brand-label');  
+          }
+          margin-bottom: 10px;
+        }
+        &:nth-child(1) {
+          width: 40%;
+          p:nth-child(2) {
+            font-weight: bold;
+            line-height: 24px;
+            font-size: 18px;
+            &:hover {
+              cursor: pointer;
+            }
+          }
+          p:nth-child(3) {
+            font-weight: normal;
+            line-height: 19px;
+            &:hover {
+              cursor: pointer;
+            }
+          }
+        }
+        &:nth-child(2) {
+          width: 20%;
+          p:nth-child(2) {
+            font-weight: bold;
+            line-height: 18px;
+          }
+        }
+        &:nth-child(3) {
+          width: 20%;
+          p:nth-child(2) {
+            font-weight: 500;
+            line-height: 18px;
+          }
+          p:nth-child(3) {
+            font-weight: normal;
+            line-height: 19px;
+            font-size: 14px;
+            margin-top: 4px;
+          }
+        }
+        &:nth-child(4) {
+          width: 20%;
+          p:nth-child(2), p:nth-child(3) {
+            font-weight: 500;
+            line-height: 16px;
+            @include themify($themes) {
+              color: themed('brand-label');
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .trades-list {
+    width: calc(#{$trade-main-width} + #{$right-view-margin});
+    padding-right: $right-view-margin;
+  }
+}

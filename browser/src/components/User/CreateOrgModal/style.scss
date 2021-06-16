@@ -1,0 +1,17 @@
+.Add-Org-Form {
+  .ant-form-item-label {
+    text-align: left !important;
+  }
+  .ant-form-item-required:before {
+    content: "";
+    margin-right: 0;
+  }
+  .btn-group {
+    display: flex;
+    justify-content: center;
+    .button-container:nth-child(1) {
+      margin-right: 50px;
+    }
+  }
+}
+

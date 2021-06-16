@@ -1,0 +1,8 @@
+#!/bin/bash -e
+
+# check changes in Go
+git status -s | grep "^.. go-lib\|^.. cmd" | head -c 1 | xargs test -z && echo "Lint: No changes in back-end" || make lint-go
+
+# check changes in web app code
+git status -s | grep "^.. browser" | head -c 1 | xargs test -z && echo "Lint: No changes in front-end" || make lint-browser
+

@@ -1,0 +1,88 @@
+.bid-details {
+  padding: 45px;
+
+  p {
+    color: #5D558A;
+  }
+
+  .header-section {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    .title {
+      width: 10%;
+    }
+    .type {
+      display: flex;
+      width: 70%;
+      display: flex;
+      padding-top: 8px;
+
+      .type-item {
+        background: #acaed7;
+        height: 18px;
+        border-radius: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+        color: white;
+        letter-spacing: 0.5px;
+        font-size: 12px;
+        margin-right: 10px;
+      }
+    }
+    .open-chat {
+      display: flex;
+      width: 10%;
+      justify-content: flex-end;
+      margin-top: 8px;
+      cursor: pointer;
+    }
+  }
+  .body-container {
+    width: 90%;
+    display: flex;
+    padding: 25px;
+    background: white;
+    justify-content: space-between;
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+
+      .shipment {
+        text-align: right;
+      }
+    }
+    .row-bottom {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 50px;
+    }
+    .left-body {
+      width: 40%;
+    }
+    .right-body {
+      width: 45%;
+
+      .contract-btn {
+        display: flex;
+        margin-top: 50px;
+        align-items: center;
+        justify-content: flex-end;
+        cursor: pointer;
+
+        i {
+          font-size: 20px;
+          color: #FBD652;
+          background-color: #383164;
+          border-radius: 50%;
+          margin-left: 10px;
+        }
+      }
+      .download-btn {
+        display: flex;
+      }
+    }
+  }
+}

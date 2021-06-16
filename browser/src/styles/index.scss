@@ -1,0 +1,108 @@
+//ant design css
+@import "~antd/dist/antd.css";
+@import "~antd/dist/antd.min.css";
+
+//import colors
+@import "./common/themes";
+
+//import variables
+@import "./common/variables";
+
+//import images
+@import "./common/images";
+
+//import fonts
+@import "./common/fonts";
+
+//import fade
+@import "./common/fade";
+
+//import base css
+@import "./base/base";
+
+//components
+@import "../layouts/style";
+@import "../components/Common/SideMenu/style";
+@import "../components/Common/UserCard/style";
+@import "../components/Common/Preferences/style";
+@import "../components/Trade/TradeView/style";
+@import "../components/Common/Button/style";
+@import "../components/Common/Modals/ContractModal/style";
+@import "../components/Trade/Stage/style";
+@import "../components/Trade/Doc/style";
+@import "../components/Common/Modals/StellarModal/style";
+@import "../components/Common/RenderDropZone/style";
+@import "../components/Common/Collapse/PublicKeyConfirmation/style";
+@import "../components/User/Login/style.scss";
+@import "../components/User/Signup/style.scss";
+@import "../components/User/Profile/style.scss";
+@import "../components/User/CreateOrgModal/style.scss";
+
+@import "../components/Header/style";
+@import "../components/Trade/style";
+@import "../components/TradeList/style";
+@import "../components/TradeOffers/BidOfferList/style";
+@import "../components/TradeOffers/BidOfferAddNew/style";
+@import "../components/TradeOffers/BidOfferDetails/style";
+
+:global(.hoverable:hover) {
+  cursor: pointer;
+}
+
+:global(.highlight-text) {
+  @include themify($themes) {
+    color: themed('brand-highlight ');
+  }
+}
+
+div, p, span, tr, td, li, ul, ol {
+  font-family: $font-family-base, sans-serif !important;
+  &.monospace {
+    font-family: $font-family-monospace, monospace !important
+  }
+}
+
+%override-color-scheme{
+  @include themify($themes) {
+    color: themed('brand-text');
+  }
+}
+
+%title {
+  @extend %override-color-scheme;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: .5em;
+}
+
+:global(.empty-field) {
+  @extend %title;
+  font-size: 28px;
+}
+
+:global(.page-title) {
+  @extend %title;
+  font-size: 24px;
+}
+
+:global(.content-title) {
+  @extend %title;
+  font-size: 21px;
+}
+
+:global(.sub-title) {
+  @extend %title;
+  font-size: 18px;
+}
+
+:global(.ant-form) {
+  @extend %override-color-scheme;
+}
+
+:global(.ant-radio-wrapper) {
+  @extend %override-color-scheme;
+}
+
+:global(.ant-form-item) {
+  @extend %override-color-scheme;
+}

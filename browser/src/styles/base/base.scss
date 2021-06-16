@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 18px;
+}
+
+body {
+  margin: 0;
+  position: relative;
+  @include themify($themes) {
+    -webkit-tap-highlight-color: themed('brand-inverse');
+  }
+}
+
+button {
+  cursor: pointer;
+}
+
+p {
+  margin: 0;
+}
+
+hr {
+  clear: both;
+}

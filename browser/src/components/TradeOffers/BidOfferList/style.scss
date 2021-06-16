@@ -1,0 +1,97 @@
+.bid-list {
+  padding: 42px 20% 42px 42px;
+
+  .bid-header {
+    display: flex;
+    justify-content: space-between;
+
+    .header-left {
+      .btn-group {
+        display: flex;
+        cursor: pointer;
+
+        p {
+          margin-right: 10px;
+          @include themify($themes) {
+            color: themed('brand-text');  
+          }
+          font-size: 14px;
+        }
+        i {
+          font-size: 24px;
+          color: #FBD652;
+          background-color: #383164;
+          border-radius: 50%;
+        }
+      }
+    }
+    .header-right {
+      display: flex;
+      align-items: center;
+
+      p {
+        font-size: 16px;
+        color: #5D558A;
+        font-weight: normal;
+      }
+      .filter-icon {
+        margin-top: 22px;
+        margin-right: 22px;
+      }
+      .select-origin {
+        width: 170px;
+        margin-right: 12px;
+        color: #5D558A
+      }
+      .select-commodity {
+        width: 170px;
+        margin-right: 12px;
+        color: #5D558A
+      }
+      .select-shipment {
+        width: 140px;
+        color: #5D558A
+      }
+    }
+  }
+  .bid-list-content {
+    padding-top: 15px;
+    
+    .row-body {
+      cursor: pointer;
+
+      &:hover {
+        background-color: #e6e6e6;
+      }
+    }
+
+    .bid-row {
+      display: flex;
+      @include themify($themes) {
+        background-color: themed('trade-content-color');
+      }
+      height: 70px;
+      align-items: center;
+      padding: 30px;
+      border-top: 1px solid #d1d1d1;
+
+      .row-goods {
+        width: 30%;
+        .goods-title {
+          font-weight: bold;
+        }
+        p {
+          width: 100%;
+          text-align: left;
+        }
+      }
+      p {
+        width: 15%;
+        text-align: center;
+        font-weight: 500;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+    }
+  }
+}

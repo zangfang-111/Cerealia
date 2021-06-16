@@ -1,0 +1,20 @@
+$font-family-base: "dejavu sans";
+$font-family-monospace: "dejavu sans mono";
+
+@font-face {
+  font-family: "dejavu sans";
+  src:
+    // url("../assets/fonts/dejavu-sans-webfont.ttf") format("truetype"),
+    // url("../assets/fonts/dejavu-sans-webfont.woff2") format("woff2"),
+    url("../assets/fonts/dejavu-sans-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "dejavu sans mono";
+  src:
+    url("../assets/fonts/dejavu-sans-mono-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}

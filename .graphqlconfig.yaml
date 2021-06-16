@@ -1,0 +1,6 @@
+projects:
+  webserv:
+    schemaPath: api/websrv_schema.graphql
+    extensions:
+      endpoints:
+        default: 'http://localhost:8000/query'

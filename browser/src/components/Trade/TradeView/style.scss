@@ -1,0 +1,133 @@
+.trade-container {
+
+  .user-information {
+    display: flex;
+  }
+
+  .close-trade-button {
+    display: flex;
+    justify-content: flex-end;
+    .trade-status {
+      font-size: 16px;
+      font-weight: bold;
+      @include themify($themes) {
+        color: themed('brand-title');  
+      }
+    }
+    .green {
+      color: green !important;
+    }
+  }
+
+  .trade-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 15px;
+
+    .left-column {
+      font-size: 20px;
+      margin: 15px 0;
+
+      .trade-name {
+        font-weight: bold;
+        @include themify($themes) {
+          color: themed('badge-icon');  
+        }
+      }
+
+      .smart-contract {
+        margin-top: 10px;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .switching-body {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+    right: 0;
+
+    .switching-stage-title {
+      font-size: 16px;
+      margin-left: 0;
+      margin-right: 10px;
+      font-weight: 600;
+    }
+    .switching-section {
+      width: 60px;
+      justify-content: flex-end;
+      display: flex;
+
+      .show-switch {
+        @include themify($themes) {
+          background-color: themed('side-menu-active-bg-color');  
+        }
+      }
+    }
+  }
+
+  .trade-content {
+    @include themify($themes) {
+      background-color: themed('trade-bg');  
+    }
+    border-radius: 4px;
+    .loading-image {
+      width: 500px;
+      height: 250px;
+      margin: 100px 400px;
+    }
+    .deleted-section-title {
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .List {
+      & > div {
+        margin-bottom: 24px;
+        border-radius: 8px;
+        background-color: $white;
+        width: 100%;
+
+        -webkit-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.75);
+        box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.75);
+
+        &.dragged {
+          display: flex !important;
+          justify-content: space-between;
+          width: 63%;
+
+          .trade-stage {
+            .stage-header {
+              @include themify($themes) {
+                background-color: themed('side-menu-intactive-bg-color');  
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .trade-stage {
+      width: 100%;
+
+      &.deleted.drag_drop {
+        display: none;
+      }
+      &.pending.no_drag_drop {
+        display: none;
+      }
+      &.completed.no_drag_drop {
+        display: none;
+      }
+      &.current-stage.no_drag_drop {
+        display: none;
+      }
+      &.deleted.no_drag_drop {
+        margin-bottom: 25px;
+      }
+    }
+  }
+}

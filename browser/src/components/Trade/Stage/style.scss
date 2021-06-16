@@ -1,0 +1,282 @@
+.additional-stage {
+  .stage-content {
+    background-color: $white;
+    margin-bottom: 10px;
+    padding: 26px 15px;
+    border-radius: 5px;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.75);
+
+    &.rejected, &.approved, &.nil {
+      display: none;
+    }
+
+    &:last-child {
+      margin-bottom: 40px;
+    }
+
+    table {
+      width: 100%;
+
+      tbody {
+
+        tr {
+          width: 100%;
+
+          td {
+            padding-right: $table-td-padding;
+            span {
+              @include themify($themes) {
+                color: themed('badge-icon');
+              }
+              font-size: 14px;
+              font-weight: bold;
+            }
+            &.title {
+              width: 25%;
+              span:nth-child(2) {
+                display: block;
+                font-weight: normal;
+              }
+            }
+
+            &.owner {
+              width: 10%;
+            }
+
+            &.reason {
+              width: 25%;
+            }
+
+            &.created-by {
+              width: 15%;
+            }
+
+            &.action {
+              width: 25%;
+
+              @include themify($themes) {
+                color: themed('badge-icon');
+              }
+              font-size: 14px;
+              font-weight: bold;
+
+              i:nth-child(2) {
+                @include themify($themes) {
+                  color: themed('badge-icon');
+                }
+                font-size: 14px;
+                font-weight: bold;
+                margin-left: 5px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.trade-stage {
+  &.current-stage {
+    .stage-header {
+      @include themify($themes) {
+        background-color: themed('current-stage-highlight-color');
+      }
+    }
+  }
+
+  .stage-header {
+    @include themify($themes) {
+      background-color: themed('side-menu-bg-color');
+    }
+    width: 100%;
+    display: flex;
+    padding: $stage-header-margin;
+    & > div {
+      margin-right: $stage-header-margin;
+      @include themify($themes) {
+        color: themed('trade-tab-box-border');
+      }
+      .header-title {
+        font-weight: bold;
+        color: $white;
+      }
+    }
+    .title {
+      width: 270px;
+    }
+    .owner {
+      width: 80px;
+    }
+    .status {
+      width: 150px;
+      a {
+        @include themify($themes) {
+          color: themed('trade-tab-box-border');
+        }
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    .action {
+      width: 220px;
+    }
+    .expiring {
+      margin-right: 0px;
+      width: 120px;
+      .set-exp-time {
+        font-size: 15px;
+        margin-top: 5px;
+        &:hover {
+          cursor: pointer;
+          color: $white;
+          text-decoration: underline;
+        }
+      }
+      .disabled {
+        @include themify($themes) {
+          color: themed('brand-disabled');
+        }
+        &:hover {
+          cursor: not-allowed;
+        }
+      }
+    }
+    .stage-header-action {
+      display: flex;
+      flex-direction: column;
+      a {
+        @include themify($themes) {
+          color: themed('trade-tab-box-border');
+        }
+      }
+      a:hover {
+        @include themify($themes) {
+          color: themed('button-add-new-bg');
+        }
+      }
+      i {
+        width: 15px;
+        text-align: center;
+      }
+      .action-button {
+        @include themify($themes) {
+          color: themed('button-add-new-bg');
+        }
+      }
+    }
+  }
+  .stage-header-expand {
+    width: 100%;
+    height: 25px;
+    @include themify($themes) {
+      background-color: themed('side-menu-bg-color');
+      color: themed('trade-tab-box-border');
+    }
+    border: 0px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    &:hover {
+      @include themify($themes) {
+        background-color: themed('side-menu-active-bg-color');
+      }
+      color: yellow;
+      opacity: 0.9;
+    }
+  }
+  .activated {
+    width: 15px;
+    margin-left: -10px;
+    margin-right: 10px !important;
+    i {
+      @include themify($themes) {
+        color: themed('button-add-new-bg');
+      }
+      font-size: 16px;
+      margin-top: 10px;
+    }
+    i.doc-activated {
+      margin-right: 8px;
+      @include themify($themes) {
+        background-color: themed('current-stage-highlight-color');
+      }
+    }
+  }
+  .document-detail {
+    .ReactCollapse--content {
+      padding: 15px 20px;
+    }
+
+    .add-new-document {
+      margin: 12px;
+      @include themify($themes) {
+        color: themed('badge-icon');
+      }
+      font-size: 14px;
+      &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+div.deleted {
+  @include themify($themes) {
+    background-color: themed('trade-header-color');
+  }
+}
+
+div.completed {
+  @include themify($themes) {
+    background-color: themed('trade-content-color');
+  }
+}
+div.current-stage {
+  .stage-header-expand {
+    @include themify($themes) {
+      background-color: themed('current-stage-highlight-color');
+    }
+  }
+}
+p.warn-doc-expired {
+  color: red;
+  word-break: break-all;
+}
+p.expire-time {
+  word-break: break-all;
+}
+p.doc-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}
+
+p.error {
+  color: red;
+}
+
+.stage-expire-time{
+  .stage-datepicker {
+    @include themify($themes) {
+      color: themed('brand-filler');
+    }
+    display: flex;
+    flex-direction: column;
+    width: 195px;
+  }
+  .datepicker-btngroup {
+    align-items: center;
+    button {
+      margin: 5px 15px;
+      margin-top: 25px;
+    }
+  }
+}
+
+.timezone-picker {
+  ul {
+    z-index: 1;
+  }
+}

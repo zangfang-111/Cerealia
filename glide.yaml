@@ -1,0 +1,60 @@
+package: bitbucket.org/cerealia/apps
+import:
+- package: github.com/sirupsen/logrus
+  version: 070c81def33f6362a8267b6a4e56fb7bf23fc6b5
+- package: github.com/arangodb/go-driver
+  version: 88874b717ad9582bb274e06a2ff75428fe66c7cc
+  subpackages:
+  - http
+- package: github.com/dgrijalva/jwt-go
+  version: ^3.2.0
+  subpackages:
+  - request
+- package: github.com/go-ozzo/ozzo-routing
+  version: ^2.1.4
+  subpackages:
+  - content
+  - cors
+  - fault
+  - file
+  - slash
+- package: github.com/gorilla/context
+  version: ^1.1.1
+- package: github.com/robert-zaremba/errstack
+  version: ^3.1.2
+- package: github.com/robert-zaremba/flag
+  version: ^1.9.0
+- package: github.com/robert-zaremba/go-bat
+  version: 01f52daee1d8497fdf10083f3769e64582c2f13c
+- package: github.com/robert-zaremba/log15
+  version: ^3.1.0
+  subpackages:
+  - log15setup
+  - rollbar
+- package: github.com/scale-it/go-web
+  version: ^1.3.0
+  subpackages:
+  - ozzohandlers
+- package: golang.org/x/crypto
+  subpackages:
+  - bcrypt
+- package: gopkg.in/check.v1
+- package: github.com/facebookgo/grace
+  subpackages:
+  - gracehttp
+- package: github.com/facebookgo/httpdown
+- package: github.com/pborman/uuid
+  version: ^1.1.0
+- package: github.com/99designs/gqlgen
+  version: ~0.8.3
+- package: github.com/vmihailenco/sasl
+- package: github.com/google/uuid
+  version: ~1.0.0
+- package: github.com/go-openapi/validate
+  version: ^0.16.0
+- package: github.com/agl/ed25519
+- package: github.com/go-errors/errors
+  version: ^1.0.1
+testImports:
+- package: github.com/robert-zaremba/checkers
+  version: ~2.1.0

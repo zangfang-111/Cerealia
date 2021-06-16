@@ -1,0 +1,234 @@
+[
+  {
+    "_key": "1",
+    "firstname": "Sergey",
+    "lastname": "Ivanov",
+    "emails": [
+      "sergey@gmail.com",
+      "ivanov@gmail.com",
+      "ss@ss.ss"
+    ],
+    "roles": ["trader"],
+    "password": "47NhrwBlsRNo3BhXg/8EBL/ze/GZYsbtUQcpE3WJAk0=",
+    "organizations": {
+      "430823": "Chief Trader"
+    },
+    "salt": "h5ff0ocOdMa8avKqcUhWSQ==",
+    "createdAt": "2018-09-02T14:43:35.423969Z",
+    "avatar": "3be06678-e049-11e8-96d0-000c296c9733.gif",
+    "defaultWalletID": "wallet-one",
+    "staticWallets": {
+      "wallet-one": {
+        "name": "Static wallet 1",
+        "note": "My not-that-secure single key wallet",
+        "pubKey": "GDOKCE5VFBB3CCPWG6HLQXW7AL4QELDSHHLABWDBYMRSI4UGYY4BBGS3"
+      }
+    },
+    "approvals": [
+      {
+        "status": "approved",
+        "approver": "4",
+        "reason": "",
+        "createdAt": "2018-09-02T14:43:35.423969Z"
+      }
+    ]
+  },
+
+  {
+    "_key": "2",
+    "firstname": "Bahir",
+    "lastname": "Abadi",
+    "emails": [
+      "bahir@gmail.com",
+      "Abadi@gmail.com",
+      "bb@bb.bb"
+    ],
+    "roles": ["trader"],
+    "password": "47NhrwBlsRNo3BhXg/8EBL/ze/GZYsbtUQcpE3WJAk0=",
+    "organizations": {
+      "430768": "Trader"
+    },
+    "salt": "h5ff0ocOdMa8avKqcUhWSQ==",
+    "createdAt": "2018-09-02T14:43:35.423969Z",
+    "avatar": "4eff0a66-e049-11e8-96d0-000c296c9733.gif",
+    "defaultWalletID": "default-user2-wallet",
+    "staticWallets": {
+      "default-user2-wallet": {
+        "name": "Static wallet 2",
+        "note": "I generated this key myself",
+        "pubKey": "GCZVKTLPQY54OGK5R3EEAU22Q7COES2XP5544H2C3CRNN7GGRL74IBUM"
+      }
+    },
+    "approvals": [
+      {
+        "status": "approved",
+        "approver": "4",
+        "reason": "",
+        "createdAt": "2018-09-02T14:43:35.423969Z"
+      }
+    ]
+  },
+
+  {
+    "_key": "3",
+    "firstname": "Serdar",
+    "lastname": "Koc",
+    "emails": [
+      "serdar@gmail.com",
+      "kk@kk.kk"
+    ],
+    "roles": ["trader"],
+    "password": "47NhrwBlsRNo3BhXg/8EBL/ze/GZYsbtUQcpE3WJAk0=",
+    "organizations": {
+      "430644": "Chief Trader"
+    },
+    "salt": "h5ff0ocOdMa8avKqcUhWSQ==",
+    "createdAt": "2018-09-02T14:43:35.423969Z",
+    "avatar": "5eff0a66-e049-11e8-96d0-000c296c973f.gif",
+    "defaultWalletID": "wallet-id",
+    "staticWallets": {
+      "wallet-id": {
+        "name": "Static wallet 3",
+        "note": "Güvenli cüzdanım",
+        "pubKey": "GD3EPS4EBOK6ZELDEN466I6EU4LW7TK6UL6INZRC6OKLZKYXXESS64VE"
+      }
+    },
+    "approvals": [
+      {
+        "status": "approved",
+        "approver": "4",
+        "reason": "",
+        "createdAt": "2018-09-02T14:43:35.423969Z"
+      }
+    ]
+  },
+
+  {
+    "_key": "4",
+    "firstname": "Jin",
+    "lastname": "Jin",
+    "emails": [
+      "jin@gmail.com",
+      "jj@jj.jj"
+    ],
+    "roles": ["trader", "moderator"],
+    "password": "47NhrwBlsRNo3BhXg/8EBL/ze/GZYsbtUQcpE3WJAk0=",
+    "organizations": {
+      "430768": "manager"
+    },
+    "salt": "h5ff0ocOdMa8avKqcUhWSQ==",
+    "createdAt": "2018-09-02T14:43:35.423969Z",
+    "avatar": "4eff0a66-e049-11e8-96d0-000c296c9733.gif",
+    "defaultWalletID": "user4-wallet-id",
+    "staticWallets": {
+      "user4-wallet-id": {
+        "name": "Static wallet 4",
+        "note": "我的錢包說明",
+        "pubKey": "GAMIW7BSM5CKYVYZOKA6NQKDNHYUIRVPIHVIWLNVKMCGNDJMMQUYZFPM"
+      }
+    },
+    "approvals": [
+      {
+        "status": "approved",
+        "approver": "1",
+        "reason": "",
+        "createdAt": "2018-09-02T14:43:35.423969Z"
+      }
+    ]
+  },
+
+  {
+    "_key": "5",
+    "firstname": "Moderator",
+    "lastname": "Moderator",
+    "emails": [
+      "moderator@cerealia.ch",
+      "mod@mod.mod"
+    ],
+    "roles": ["moderator"],
+    "password": "47NhrwBlsRNo3BhXg/8EBL/ze/GZYsbtUQcpE3WJAk0=",
+    "organizations": {
+      "430768": "manager"
+    },
+    "salt": "h5ff0ocOdMa8avKqcUhWSQ==",
+    "createdAt": "2018-09-02T14:43:35.423969Z",
+    "avatar": "4eff0a66-e049-11e8-96d0-000c296c9733.gif",
+    "defaultWalletID": "user4-wallet-id",
+    "staticWallets": {
+      "user4-wallet-id": {
+        "name": "Static wallet",
+        "note": "Wallet note",
+        "pubKey": "GDU2LD6IKIWQPHSS6MNVQPP47XOISORAI7SJNXVT6KOMIY44CJTEU2GK"
+      }
+    }
+  },
+
+  {
+    "_key": "6",
+    "firstname": "Thomas",
+    "lastname": "Muler",
+    "emails": [
+      "tt@tt.tt"
+    ],
+    "roles": ["trader"],
+    "password": "47NhrwBlsRNo3BhXg/8EBL/ze/GZYsbtUQcpE3WJAk0=",
+    "organizations": {
+      "430644": "Chief manager"
+    },
+    "salt": "h5ff0ocOdMa8avKqcUhWSQ==",
+    "createdAt": "2018-09-02T14:43:35.423969Z",
+    "avatar": "5eff0a66-e049-11e8-96d0-000c296c973f.gif",
+    "defaultWalletID": "hd81592435",
+    "hdCerealiaWallets": {
+      "hd81592435": {
+        "name": "My precious HD wallet",
+        "note": "Security first",
+        "masterPubKey": "master pub key",
+        "derivationIndex": 0
+      }
+    },
+    "approvals": [
+      {
+        "status": "rejected",
+        "approver": "4",
+        "reason": "He didn't agree with our company rule",
+        "createdAt": "2018-09-02T14:43:35.423969Z"
+      }
+    ]
+  },
+
+  {
+    "_key": "7",
+    "firstname": "Secure",
+    "lastname": "Trader",
+    "emails": [
+      "aa@aa.aa"
+    ],
+    "roles": ["trader"],
+    "password": "47NhrwBlsRNo3BhXg/8EBL/ze/GZYsbtUQcpE3WJAk0=",
+    "organizations": {
+      "430644": "Chief Trader"
+    },
+    "salt": "h5ff0ocOdMa8avKqcUhWSQ==",
+    "createdAt": "2018-09-02T14:43:35.423969Z",
+    "avatar": "5eff0a66-e049-11e8-96d0-000c296c973f.gif",
+    "defaultWalletID": "hd81592435",
+    "hdCerealiaWallets": {
+      "hd81592435": {
+        "name": "My precious HD wallet",
+        "note": "Security first",
+        "masterPubKey": "master pub key",
+        "derivationIndex": 0
+      }
+    },
+    "approvals": [
+      {
+        "status": "approved",
+        "approver": "4",
+        "reason": "",
+        "createdAt": "2018-09-02T14:43:35.423969Z"
+      }
+    ]
+  }
+
+]

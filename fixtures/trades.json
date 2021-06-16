@@ -1,0 +1,551 @@
+[
+  {
+    "_key": "1993134",
+    "name": "test Trade1 for Ben",
+    "description": "this is peanut trade of Ukraine",
+    "templateID": "1471792",
+    "buyer": {
+      "userID": "2",
+      "walletID": "default-user2-wallet",
+      "pubKey": "GCZVKTLPQY54OGK5R3EEAU22Q7COES2XP5544H2C3CRNN7GGRL74IBUM"
+    },
+    "seller": {
+      "userID": "1",
+      "walletID":"wallet-one",
+      "pubKey": "GDOKCE5VFBB3CCPWG6HLQXW7AL4QELDSHHLABWDBYMRSI4UGYY4BBGS3"
+    },
+    "scAddr": "GAR4J5VOVQNEXTZGB36E5SNRVSZ3VONN2FFIBWUJVOS376CGUNPZTTJJ",
+    "scValidationKey": "SCF3CIH2YGOKSRXR3LZJDPQWVLH62WTWVOLI2FJE72FREEA7JFM5ACKO",
+    "scVersion": 1,
+    "stages": [
+      {
+        "name": "trade contract",
+        "description": "FOB Ukrainina Wheat, Odessa",
+        "owner": "n",
+        "addReqIdx": -1,
+        "docs": [{
+          "docID": "aaa1",
+          "status": "rejected",
+          "rejectReason": "Rejecting, The price doesn't equal to the one we agreeded on. Please update your information",
+          "approvedBy": "1",
+          "approvedAt": "2018-09-25T13:27:28.693784Z",
+          "approvedTx": "e47873bdc1d60c53bc66da6d9fc04ef69218db6b081469db3a1180ee2810de6b",
+          "reqTx": "a8fce3be702fbcf9791d8a92bc5d04aa998e6143850cf28d0a5e324dd8ab5ca0",
+          "expiresAt": "2018-12-25T15:27:28.693784Z"
+        }, {
+          "docID": "aaa2",
+          "status": "approved",
+          "rejectReason": "",
+          "approvedBy": "1",
+          "approvedAt": "2018-09-25T14:27:28.693784Z",
+          "approvedTx": "e47873bdc1d60c53bc66da6d9fc04ef69218db6b081469db3a1180ee2810de6b",
+          "reqTx": "a8fce3be702fbcf9791d8a92bc5d04aa998e6143850cf28d0a5e324dd8ab5ca0",
+          "expiresAt": "2018-12-25T15:27:28.693784Z"
+        }],
+        "delReqs": [],
+        "closeReqs": [],
+        "moderator": {
+          "userID": "4",
+          "createdAt": "2018-09-25T12:23:25.833791Z"
+        }
+      },
+      {
+        "name": "stage 1",
+        "description": "Seller to charter the vessel and send vessel's nomination",
+        "owner": "s",
+        "addReqIdx": -1,
+        "expiresAt": "2019-10-21T07:47:58Z",
+        "docs": [{
+          "docID": "aaa3",
+          "status": "approved",
+          "rejectReason": "",
+          "approvedBy": "2",
+          "approvedAt": "2018-09-25T13:27:28.693784Z",
+          "approvedTx": "e47873bdc1d60c53bc66da6d9fc04ef69218db6b081469db3a1180ee2810de6b",
+          "reqTx": "a8fce3be702fbcf9791d8a92bc5d04aa998e6143850cf28d0a5e324dd8ab5ca0",
+          "expiresAt": "2019-12-26T13:27:28.693784Z"
+        }],
+        "delReqs": [],
+        "closeReqs": [{
+          "status": "pending",
+          "reqActor": "s",
+          "reqBy": "1",
+          "reqAt": "2018-09-24T13:27:28.693784Z",
+          "approvedBy": null,
+          "approvedAt": null,
+          "approvedTx": "",
+          "reqTx": "a8fce3be702fbcf9791d8a92bc5d04aa998e6143850cf28d0a5e324dd8ab5ca0",
+          "reqReason": "This request expired",
+          "rejectReason": ""
+        }, {
+          "status": "approved",
+          "reqActor": "s",
+          "reqBy": "1",
+          "reqAt": "2018-09-25T13:27:28.693784Z",
+          "approvedBy": "2",
+          "approvedAt": "2018-09-25T13:27:28.693784Z",
+          "approvedTx": "e47873bdc1d60c53bc66da6d9fc04ef69218db6b081469db3a1180ee2810de6b",
+          "reqTx": "a8fce3be702fbcf9791d8a92bc5d04aa998e6143850cf28d0a5e324dd8ab5ca0",
+          "reqReason": "Doc ok",
+          "rejectReason": ""
+        }],
+        "moderator": {
+          "userID": "4",
+          "createdAt": "2018-09-25T12:23:25.833791Z"
+        }
+      },
+      {
+        "name": "Stage 2 documentary instructions",
+        "description": "Buyer to send documentary instructions within max 3 days.",
+        "owner": "b",
+        "addReqIdx": -1,
+        "expiresAt": null,
+        "docs": [{
+          "docID": "3470389",
+          "status": "pending",
+          "reqTx": "d1d5b81d0cd6290d4230d779d6f1fbfdbfba3d986f7d1ec3fd8d220da64dcc99",
+          "approvedBy": null,
+          "approvedAt": null,
+          "approvedTx": "",
+          "expiresAt": "2019-01-31T19:05:05Z"
+        }],
+        "delReqs": [],
+        "closeReqs": []
+      },
+      {
+        "name": "Stage 3 draft cargo documents",
+        "description": "Seller to send draft cargo documents within max 2 days.",
+        "owner": "s",
+        "addReqIdx": -1,
+        "docs": [{
+          "docID": "3470389",
+          "status": "approved",
+          "reqTx": "d1d5b81d0cd6290d4230d779d6f1fbfdbfba3d986f7d1ec3fd8d220da64dcc99",
+          "approvedTx": "40487b61cd80d8cd12938d88aa73200cb508d1a07992e6f41fb7f9b0b56a6bd1",
+          "approvedBy": "1",
+          "approvedAt": "2019-01-30T19:16:51.911393Z",
+          "expiresAt": "2019-01-31T19:05:05Z"
+        }],
+        "delReqs": [{
+          "status": "rejected",
+          "reqActor": "s",
+          "reqBy": "1",
+          "reqAt": "2018-09-25T13:27:28.693784Z",
+          "approvedBy": "2",
+          "approvedAt": "2018-09-25T13:27:28.693784Z",
+          "approvedTx": "e47873bdc1d60c53bc66da6d9fc04ef69218db6b081469db3a1180ee2810de6b",
+          "reqTx": "a8fce3be702fbcf9791d8a92bc5d04aa998e6143850cf28d0a5e324dd8ab5ca0",
+          "reqReason": "This stage is not needed",
+          "rejectReason": "It is needed"
+        }],
+        "closeReqs": []
+      },
+      {
+        "name": "Stage 4",
+        "description": "Buyer to approve or decline draft cargo documents within max 2 days.",
+        "owner": "b",
+        "addReqIdx": -1,
+        "docs": [],
+        "delReqs": [],
+        "closeReqs": []
+      },
+      {
+        "name": "Stage 5",
+        "description": "Seller to load the goods onto the vessel and send a Notice of appropriation (NOA) and all cargo docs.",
+        "owner": "s",
+        "addReqIdx": -1,
+        "docs": [{
+          "docID": "3470389",
+          "status": "expired",
+          "reqActor": "s",
+          "reqBy": "1",
+          "reqAt": "2018-09-24T13:27:28.693784Z",
+          "approvedBy": null,
+          "approvedAt": null,
+          "approvedTx": "",
+          "expiresAt": "2018-12-25T15:27:28.693784Z",
+          "reqTx": "a8fce3be702fbcf9791d8a92bc5d04aa998e6143850cf28d0a5e324dd8ab5ca0",
+          "reqReason": "This request expired",
+          "rejectReason": ""
+        }],
+        "delReqs": [],
+        "closeReqs": []
+      },
+      {
+        "name": "Stage 6",
+        "description": "Buyer to nominate agent at discharge port max within max 2 days, after NOA is sent.",
+        "owner": "b",
+        "addReqIdx": -1,
+        "docs": [],
+        "delReqs": [],
+        "closeReqs": []
+      },
+      {
+        "name": "Stage 7",
+        "description": "Buyer to approve or decline NOA and all cargo docs.",
+        "owner": "b",
+        "addReqIdx": -1,
+        "docs": [],
+        "delReqs": [],
+        "closeReqs": []
+      },
+      {
+        "name": "Stage 8",
+        "description": "When buyer approves the cargo docs, he needs to effect the payment within max 2 banking days.", "owner": "b",
+        "addReqIdx": -1,
+        "docs": [],
+        "delReqs": [],
+        "closeReqs": []
+      }, {
+        "name": "Stage 9",
+        "description": "If there is a demurrage, seller to send all supporting docs.",
+        "owner": "s",
+        "addReqIdx": -1,
+        "docs": [],
+        "delReqs": [],
+        "closeReqs": []
+      }, {
+        "name": "Stage 10",
+        "description": "Buyer to approve or decline demurrage supporting docs.",
+        "owner": "b",
+        "addReqIdx": -1,
+        "docs": [],
+        "delReqs": [],
+        "closeReqs": []
+        }, {
+          "name": "Stage 11",
+          "description": "When buyer approves demurrage supporting docs, he needs to effect the payment within 2 banking days.",
+          "owner": "b",
+          "addReqIdx": -1,
+          "docs": [],
+          "delReqs": [],
+          "closeReqs": []
+        },
+        {
+          "name": "deleted stage 1",
+          "description": "Seller to charter the vessel and send vessel's nomination",
+          "addReqIdx": -1,
+          "owner": "s",
+          "docs": [],
+          "delReqs": [
+            {
+              "status": "approved",
+              "reqActor": "s",
+              "reqBy": "1",
+              "reqAt": "2018-10-25T12:38:32.464432Z",
+              "approvedBy": "2",
+              "approvedAt": "2018-10-25T12:39:02.133367Z",
+              "approvedTx": "e47873bdc1d60c53bc66da6d9fc04ef69218db6b081469db3a1180ee2810de6b",
+              "reqTx": "a8fce3be702fbcf9791d8a92bc5d04aa998e6143850cf28d0a5e324dd8ab5ca0",
+              "reqReason": "I think the stage 1 is no longer needed",
+              "rejectReason": ""
+            }
+          ],
+          "closeReqs": []
+        }
+    ],
+    "stageAddReqs": [
+      {
+        "name": "discuss vessel",
+        "description": "seller should send buyer the vessel info",
+        "owner": "s",
+        "status": "rejected",
+        "reqActor": "s",
+        "reqBy": "1",
+        "reqAt": "2018-09-25T13:22:30.445996Z",
+        "approvedBy": "2",
+        "approvedAt": "2018-09-25T13:17:58.470122Z",
+        "reqReason": "I want discuss about vessel info",
+        "rejectReason": "I can't agree with you!"
+      }
+    ],
+    "closeReqs": [],
+    "createdBy": "2",
+    "createdAt": "2018-09-25T12:23:25.833791Z",
+    "moderating": "nil",
+    "tradeOffer": "1",
+    "accountAddr": "GBM2W2FYO2PVRUWLZMSKR3QSY5BEHFRITVCEHSBZ62OY5Z3AQHSVP4YC"
+  },
+  {
+    "_key": "1993135",
+    "status": false,
+    "name": "test Trade2 for Ben",
+    "description": "this is buckwheat trade of Ukraine",
+    "templateID": "1471792",
+    "buyer": {
+      "userID": "2",
+      "walletID": "default-user2-wallet",
+      "pubKey": "GCZVKTLPQY54OGK5R3EEAU22Q7COES2XP5544H2C3CRNN7GGRL74IBUM"
+    },
+    "seller": {
+      "userID": "1",
+      "walletID":"wallet-one",
+      "pubKey": "GDOKCE5VFBB3CCPWG6HLQXW7AL4QELDSHHLABWDBYMRSI4UGYY4BBGS3"
+    },
+    "scAddr": "GCKHCEE66XY3PY2QHNEBSKPGVHUZUAZD72NPYUTP3GWTL45TCBQVQZON",
+    "scValidationKey": "SCQRFGSIHYBN3EP3UIH7GEYSHKMTJDGMUAUQ5OJAWU4S2IFW63VHVXLY",
+    "scVersion": 1,
+    "stages": [
+      {
+        "name": "trade contract",
+        "description": "Uploading trade contract",
+        "owner": "n",
+        "addReqIdx": -1,
+        "docs": [{
+          "docID": "bbb1",
+          "status": "approved",
+          "rejectReason": null,
+          "approvedBy": "1",
+          "approvedAt": "2018-09-25T13:27:28.693784Z",
+          "approvedTx": "a8fce3be702fbcf9791d8a92bc5d04aa998e6143850cf28d0a5e324dd8ab5ca0",
+          "reqTx": "a8fce3be702fbcf9791d8a92bc5d04aa998e6143850cf28d0a5e324dd8ab5ca0",
+          "expiresAt": "2018-12-25T13:27:28.693784Z"
+        }],
+        "delReqs": [],
+        "closeReqs": []
+      },
+      {
+        "name": "stage 1",
+        "description": "Seller to charter the vessel and send vessel's nomination",
+        "owner": "b",
+        "addReqIdx": -1,
+        "docs": [{
+          "docID": "bbb2",
+          "status": "rejected",
+          "rejectReason": "I can't agree this document",
+          "approvedBy": "1",
+          "approvedAt": "2018-09-25T13:27:28.693784Z",
+          "approvedTx": "a8fce3be702fbcf9791d8a92bc5d04aa998e6143850cf28d0a5e324dd8ab5ca0",
+          "reqTx": "a8fce3be702fbcf9791d8a92bc5d04aa998e6143850cf28d0a5e324dd8ab5ca0",
+          "expiresAt": "2018-12-25T13:27:28.693784Z"
+        }],
+        "delReqs": [],
+        "closeReqs": [],
+        "moderator": {
+          "userID": "4",
+          "createdAt": "2018-09-25T12:23:25.833791Z"
+        }
+      },
+      {
+        "name": "discuss vessel again",
+        "description": "seller should send buyer the vessel info",
+        "owner": "b",
+        "addReqIdx": -1,
+        "docs": [],
+        "delReqs": [],
+        "closeReqs": [],
+        "moderating": "nil"
+      },
+      {
+        "name": "Stage 2",
+        "description": "Test stage complete",
+        "owner": "b",
+        "addReqIdx": -1,
+        "docs": [],
+        "delReqs": [],
+        "closeReqs": [{
+          "status": "rejected",
+          "reqActor": "b",
+          "reqBy": "1",
+          "reqAt": "2018-09-25T13:34:23.432257Z",
+          "approvedBy": "1",
+          "approvedAt": "2018-09-25T13:28:41.154701Z",
+          "approvedTx": "e47873bdc1d60c53bc66da6d9fc04ef69218db6b081469db3a1180ee2810de6b",
+          "reqTx": "a8fce3be702fbcf9791d8a92bc5d04aa998e6143850cf28d0a5e324dd8ab5ca0",
+          "reqReason": "All good let's close and move forward",
+          "rejectReason": "I don't agree!"
+        }, {
+          "status": "approved",
+          "reqActor": "b",
+          "reqBy": "1",
+          "reqAt": "2018-09-25T13:27:28.693784Z",
+          "approvedBy": "1",
+          "approvedAt": "2018-09-25T13:27:28.693784Z",
+          "approvedTx": "e47873bdc1d60c53bc66da6d9fc04ef69218db6b081469db3a1180ee2810de6b",
+          "reqTx": "a8fce3be702fbcf9791d8a92bc5d04aa998e6143850cf28d0a5e324dd8ab5ca0",
+          "reqReason": "Updated, let's move forward",
+          "rejectReason": ""
+        }]
+      }, {
+        "name": "Stage 3",
+        "description": "Test stage delete",
+        "owner": "b",
+        "addReqIdx": -1,
+        "docs": [],
+        "expiresAt": "2019-12-31T07:47:58Z",
+        "delReqs": [{
+          "status": "approved",
+          "reqActor": "b",
+          "reqBy": "1",
+          "reqAt": "2018-09-25T13:27:28.693784Z",
+          "approvedBy": "1",
+          "approvedAt": "2018-09-25T13:27:28.693784Z",
+          "approvedTx": "e47873bdc1d60c53bc66da6d9fc04ef69218db6b081469db3a1180ee2810de6b",
+          "reqTx": "a8fce3be702fbcf9791d8a92bc5d04aa998e6143850cf28d0a5e324dd8ab5ca0",
+          "reqReason": "this stage is really no longer needed!",
+          "rejectReason": ""
+        }],
+        "closeReqs": [{
+          "status": "rejected",
+          "reqActor": "b",
+          "reqBy": "1",
+          "reqAt": "2018-09-25T13:34:23.432257Z",
+          "approvedBy": "1",
+          "approvedAt": "2018-09-25T13:28:41.154701Z",
+          "approvedTx": "e47873bdc1d60c53bc66da6d9fc04ef69218db6b081469db3a1180ee2810de6b",
+          "reqTx": "a8fce3be702fbcf9791d8a92bc5d04aa998e6143850cf28d0a5e324dd8ab5ca0",
+          "reqReason": "this stage is no longer needed!",
+          "rejectReason": "In that case we should delete, not close!"
+        }]
+      }
+    ],
+    "stageAddReqs": [
+      {
+        "name": "discuss vessel",
+        "description": "seller should send buyer the vessel info",
+        "owner": "b",
+        "status": "rejected",
+        "reqBy": "1",
+        "reqActor": "s",
+        "reqAt": "2018-09-25T13:22:30.445996Z",
+        "approveBy": "2",
+        "approveAt": "2018-09-25T13:17:58.470122Z",
+        "reqReason": "I want discuss about vessel info",
+        "rejectReason": "I can't agree with you!"
+      }
+    ],
+    "createdBy": "1",
+    "createdAt": "2018-09-25T12:23:25.833791Z",
+    "moderating": "doing",
+    "tradeOffer": "2",
+    "accountAddr": "GAGEM3WMH4V7INHGGXVWRJGGEFS4YKE5X7LRX673YZE2WYN7ZLVBLK5U"
+  },
+  {
+    "_key": "3155708",
+    "name": "test completed Trade2",
+    "description": "this is maize completed trade of Ukraine",
+    "templateID": "1471792",
+    "buyer": {
+      "userID": "2",
+      "walletID": "default-user2-wallet",
+      "pubKey": "GCZVKTLPQY54OGK5R3EEAU22Q7COES2XP5544H2C3CRNN7GGRL74IBUM"
+    },
+    "seller": {
+      "userID": "1",
+      "walletID":"wallet-one",
+      "pubKey": "GDOKCE5VFBB3CCPWG6HLQXW7AL4QELDSHHLABWDBYMRSI4UGYY4BBGS3"
+    },
+    "scAddr": "GCRTP7K6TLKQ3YZHSCFMAFBPLHWYQTKDXY72IJY6ZIEJRTYM6UMMVNCB",
+    "scValidationKey": "SAH7F3GNMGD7WRNPO7RQRN4J6WWTO4CXOJMWRLJMCIKAO5X3VJXK3XYD",
+    "scVersion": 1,
+    "stages": [
+      {
+        "name": "trade contract",
+        "description": "",
+        "addReqIdx": -1,
+        "owner": "n",
+        "docs": [{
+          "docID": "bbb3",
+          "status": "approved",
+          "reqTx": "5fd74cbeaa6c10ef5e1ef97fbbfe9091e3c12d86b92482f777878387dc841335",
+          "approvedTx": "beeecfd4219a4e450d62c1755e1258a8b67a98db752ce5bbc32d1984feb28283",
+          "approvedBy": "2",
+          "approvedAt": "2019-01-28T02:13:31.199828Z",
+          "expiresAt": "2019-01-30T02:10:44Z"
+        }],
+        "delReqs": [],
+        "closeReqs": [{
+          "status": "approved",
+          "reqActor": "s",
+          "reqBy": "1",
+          "reqAt": "2019-01-28T02:14:42.067467Z",
+          "reqTx": "9949d6b6752f11994bc9dbef3ce4a5cb5321c6d7980e2825d46a498ad2fad25f",
+          "approvedBy": "2",
+          "approvedAt": "2019-01-28T02:24:09.738606Z",
+          "approvedTx": "01af148fa0d4fcbcd41b9017ba4d38274c9486aa6be5ec208fb3cca32e147831",
+          "reqReason": "I want to close this stage",
+          "rejectReason": ""
+        }]
+      },
+      {
+        "name": "stage 1",
+        "description": "Seller to charter the vessel and send vessel's nomination",
+        "addReqIdx": -1,
+        "owner": "s",
+        "docs": [{
+          "docID": "aaa5",
+          "status": "approved",
+          "reqTx": "777ceb4d6270e0251fc82b19e72f697d757bc275d2a3f5e5bec54c8afb8cb3a2",
+          "approvedTx": "5fa017f67cf41cb15c196ad8e2f04eb6dc1702a6c5937a10b148cba8734e5fc3",
+          "approvedBy": "2",
+          "approvedAt": "2019-01-28T06:05:26.451538Z",
+          "expiresAt": "2019-01-30T05:59:01Z"
+        }, {
+          "docID": "aaa4",
+          "status": "approved",
+          "reqTx": "777ceb4d6270e0251fc82b19e72f697d757bc275d2a3f5e5bec54c8afb8cb3a2",
+          "approvedTx": "5fa017f67cf41cb15c196ad8e2f04eb6dc1702a6c5937a10b148cba8734e5fc3",
+          "approvedBy": "2",
+          "approvedAt": "2019-01-28T06:05:26.451538Z",
+          "expiresAt": "2019-01-30T05:59:01Z"
+        }],
+        "delReqs": [],
+        "closeReqs": [{
+          "status": "rejected",
+          "reqActor": "s",
+          "reqBy": "1",
+          "reqAt": "2018-09-25T13:27:28.693784Z",
+          "reqTx": "a8fce3be702fbcf9791d8a92bc5d04aa998e6143850cf28d0a5e324dd8ab5ca0",
+          "approvedBy": "1",
+          "approvedAt": "2018-09-25T13:27:28.693784Z",
+          "approvedTx": "e47873bdc1d60c53bc66da6d9fc04ef69218db6b081469db3a1180ee2810de6b",
+          "reqReason": "Everything should be good",
+          "rejectReason": "You didn't provide a document"
+        }, {
+          "status": "approved",
+          "reqActor": "s",
+          "reqBy": "1",
+          "reqAt": "2018-09-25T13:27:28.693784Z",
+          "reqTx": "a8fce3be702fbcf9791d8a92bc5d04aa998e6143850cf28d0a5e324dd8ab5ca0",
+          "approvedBy": "1",
+          "approvedAt": "2018-09-25T13:27:28.693784Z",
+          "approvedTx": "e47873bdc1d60c53bc66da6d9fc04ef69218db6b081469db3a1180ee2810de6b",
+          "reqReason": "Doc ok",
+          "rejectReason": ""
+        }, {
+          "status": "approved",
+          "reqActor": "s",
+          "reqBy": "1",
+          "reqAt": "2019-01-28T06:06:24.840732Z",
+          "reqTx": "c326949b3339daab67ec57d2c7d56b808f075f756379165eca9fa6b210249a82",
+          "approvedBy": "2",
+          "approvedAt": "2019-01-28T06:17:18.233686Z",
+          "approvedTx": "85d7b09d9c852c90752d772b74b2ced2c9f26b6926c4f3181202a22850f55b65",
+          "reqReason": "I want to close this stage",
+          "rejectReason": ""
+        }],
+        "moderator": {
+          "userID": "4",
+          "createdAt": "2018-09-25T12:23:25.833791Z"
+        }
+      }
+    ],
+    "stageAddReqs": null,
+    "closeReqs": [{
+      "status": "approved",
+      "reqActor": "b",
+      "reqBy": "2",
+      "reqAt": "2019-01-28T02:25:07.705073Z",
+      "reqTx": "62a963a266870ad257d255b78083bf1d6512aa0c685c35198d65cea3cc56ac89",
+      "approvedBy": "1",
+      "approvedAt": "2019-01-28T03:14:41.330861Z",
+      "approvedTx": "d0c4abe7e252b30aca8dfdf3a3c427895fae35005c62b727b258fe467606b604",
+      "reqReason": "It seems to be all completed",
+      "rejectReason": ""
+    }],
+    "createdBy": "1",
+    "createdAt": "2019-01-28T02:10:44.808389Z",
+    "moderating": "done",
+    "tradeOffer": "3"
+  }
+]

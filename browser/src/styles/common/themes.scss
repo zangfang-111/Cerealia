@@ -1,0 +1,149 @@
+// used https://graf1x.com/list-of-colors-with-color-names/
+
+$transparent: transparent;
+// $white is not refactored
+$white: #fff;
+$white-1: #eee;
+$white-2: #ccc;
+$black: #000;
+$gray: #F8F8F8;
+$gray-1: #D3D3D3;
+$gray-2: #808080;
+$gray-3: #9D9898;
+$blue-1: #191532;
+$blue-2: #383164;  // eg right main menu
+$blue-3: #5D558A;  // eg right main menu active entry
+$blue-4: #2A2355;
+$blue-5: #ACAED7;
+
+$purple-2: #922d58;
+
+$green: #00bb00;
+$green-2: #10a010;
+$green-3: #20a040;
+
+$red: #ff0000;
+$red-1: #C31616;
+$red-2: #8b0000;
+$yellow: #ffff00;
+$yellow-1: #FBD652;
+$yellow-2: #f4dd4c;
+
+$themes: (
+light: (
+    // general
+    brand-text: $blue-1,
+    brand-label: $gray-2,
+    brand-inverse: $white,
+    brand-critical: $red-2,
+    brand-highlight: $green,
+    brand-title: $blue-3,
+    brand-filler: $blue-2,
+    brand-disabled: $gray-1,
+    brand-modal: $black,
+    // header
+    badge-icon: $blue-1,
+    header-bg: $white,
+    header-outline: $blue-2,
+    // sidebar
+    side-menu-bg-color: $blue-2,
+    side-menu-active-bg-color: $blue-3,
+    side-menu-admin-bg-color: $red-1,
+    side-menu-admin-active-bg-color: $red-2,
+    side-menu-intactive-bg-color: $gray-2,
+    side-menu-content: $white,
+    // router
+    bg-color: lighten($black, 98%),
+    // home page
+    user-card: $blue-1,
+    user-card-secondary: $red-1,
+    down-load: $blue-3,
+    approve-reject-icon: lighten($black, 77%),
+    home-background: lighten($black, 94%),
+    // trade section
+    trade-bg: $white,
+    trade-header-color: lighten($black, 61%),
+    trade-content-color: lighten($black, 94%),
+    trade-tab-box-color: lighten($black, 99%),
+    trade-tab-box-border: $white-1,
+    // stage section
+    stage-background-color: lighten($black, 60%),
+    approval-document-color: $green,
+    rejected-document-color: $red-1,
+    current-stage-highlight-color: $purple-2,
+    // contract modal
+    label-color: $blue-2,
+    bg-transparent: $transparent,
+    // button style
+    button-disabled-color: $white-2,
+    button-add-new-bg: $yellow-1
+),
+dark: (
+    // general
+    brand-text: $gray,
+    brand-label: $white,
+    brand-inverse: $blue-4,
+    brand-critical: $red-2,
+    brand-highlight: $green,
+    brand-title: $white,
+    brand-filler: $blue-2,
+    brand-disabled: $gray-1,
+    brand-modal: $black,
+    // header
+    badge-icon: $blue-5,
+    header-bg: $blue-2,
+    header-outline: $yellow-1,
+    // sidebar
+    side-menu-bg-color: $blue-2,
+    side-menu-active-bg-color: $blue-3,
+    side-menu-admin-bg-color: $red-1,
+    side-menu-admin-active-bg-color: $red-2,
+    side-menu-intactive-bg-color: $gray-2,
+    side-menu-content: $white,
+    // router
+    bg-color: $blue-4,
+    // home page
+    user-card: $gray,
+    user-card-secondary: $red-1,
+    down-load: $blue-5,
+    approve-reject-icon: lighten($black, 77%),
+    home-background: $blue-4,
+    // trade section
+    trade-header-color: lighten($black, 61%),
+    trade-content-color: $blue-2,
+    trade-tab-box-color: lighten($black, 99%),
+    trade-tab-box-border: $white-1,
+    trade-bg: $blue-4,
+    // stage section
+    stage-background-color: lighten($black, 60%),
+    approval-document-color: $green,
+    rejected-document-color: $red-1,
+    current-stage-highlight-color: $purple-2,
+    // contract modal
+    label-color: $blue-2,
+    bg-transparent: $transparent,
+    // button style
+    button-disabled-color: $white-2,
+    button-add-new-bg: $yellow-1
+),
+);
+
+@mixin themify($themes: $themes) {
+  @each $theme, $map in $themes {
+
+    .theme-#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), '#{$key}');
+        $theme-map: map-merge($theme-map, ($key: $value)) !global;
+      }
+
+      @content;
+      $theme-map: null !global;
+    }
+
+  }
+}
+@function themed($key) {
+    @return map-get($theme-map, $key);
+}

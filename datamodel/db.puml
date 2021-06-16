@@ -1,0 +1,325 @@
+@startuml
+package "User" #DDDDFF {
+  class User {
+    id              UUID PK
+    createdAt       Date
+    firstname       String
+    lastname        String
+    emails          []String
+    roles           []UserRoleEnum
+    avatar          String
+    password        String
+    salt            String
+    // this is an append only structure
+    approvals:      []_Approval
+    defaultwalletID wallet.id
+    publicKeys \n\t map name: String -> key: String
+    organizations \n\tmap organization.id -> role (String)
+    staticWallets \n\tmap wallet.id -> StaticWallet
+    hdCerealiaWallets \n\tmap wallet.id -> HDCerealiaWallet
+    -- _Approval --
+    approverID  User
+    status      SimpleApprovalEnum
+    reson       String
+    createdAt   Date
+  }
+  class Organization {
+    id        UUID PK
+    name      String
+    address   String
+    addressCountry   Country  X
+    www       URL  X
+    tel       String  X
+    email     String
+  }
+  User --o Organization : belongs to
+  User *-- StaticWallet : belongs to
+  User *-- HDCerealiaWallet : belongs to
+  Organization --> Country
+
+
+  enum Country {
+    id  String
+    name String
+  }
+  abstract StaticWallet {
+    name   String
+    note   String
+    pubKey Public Key
+  }
+  abstract HDCerealiaWallet {
+    name            String
+    note            String
+    masterPubKey    String
+    derivationIndex String
+  }
+}
+
+package "Trade" #FFDDDD {
+
+  class Trade {
+    id           UUID PK
+    status       DoneEnum
+    name         String
+    description  String
+    templateID   PK
+    buyer        TradeParticipant
+    seller       TradeParticipant
+    scAddr       String
+    stages       []Stage appendonly
+    stageAddReqs []StageAddReq appendonly
+    closeReqs    []ApproveReq appendonly
+    createdBy    User.id
+    createdAt    Date
+    tradeOffer   TradeOffer.id Null
+    moderating   DoneStatus
+    -- doc --
+    + when trade is closed (last element in\n closeReqs status == "approved") we shouldn\'t be\n able to modify the trade.
+  }
+  User <-- Trade : createdBy
+  Trade --> TradeOffer : createdFrom
+
+  abstract Stage {
+    name         String
+    description  String
+    addReqIdx    Int32
+    owner        TradeActorEnum
+    expiresAt    Datetime Null
+    docs         []StageDoc
+    delReqs      []ApproveReq appendonly
+    closeReqs    []ApproveReq appendonly
+    moderator    StageModerator
+    -- doc --
+    + addReqIdx is an index in trade\n stageAddReqs. It is >=0 if stage\n was created through "add new stage"\n else -1.
+    + delReqs / closeReqs - only\n owenr should be able to post a req.
+  }
+  note left of Stage::pos
+    position in a UI.
+    For now it is shared.
+    Later we may change it.
+  end note
+  Trade *-- Stage: belongs to
+  ' Stage -left-> "0,1" StageAddReq : created through
+
+  class ApproveReq {
+    status       Approval
+    reqActor     TradeActorEnum
+    reqBy        User.id
+    reqAt        Date
+    reqTx        String
+    approvedBy   User.id
+    approvedAt   Date
+    approvedTx   String
+    reqReason    String
+    rejectReason String
+    -- doc --
+    This class represents an approval process.
+    Only one active request is allowed in a
+    class composing ApproveReq.
+  }
+
+  abstract StageAddReq {
+    name         String
+    description  String
+    owner        TradeActorEnum
+    -- doc --
+    Many active req are allowed.
+  }
+  StageAddReq --|> ApproveReq
+  Trade *-- StageAddReq
+  /' StageAddReq -[hidden]> Stage
+   '/
+
+  abstract StageDoc {
+    docID         Doc.id
+    status        ApprovalEnum
+    reqTx         String
+    approvedTx    String
+    approvedBy    User.id
+    approvedAt    Datetime
+    expiresAt     Datetime
+    rejectReason  String Null
+  }
+  note left of StageDoc::approved_by
+    A preson who approves/rejects.
+    Later we will have to have a RBAC.
+  end note
+  StageDoc <-right-> Doc: edge
+  Stage *-- StageDoc
+
+
+  class Doc {
+    id           string, PK
+    hash         Hex index
+    name         String
+    note         String
+    type         FileType
+    url          String
+    createdBy    User
+    createdAt    Datetime
+    __ edges __
+    + doc_edges(_to: Trade.id,\n  stage_idx, stage_doc_idx)
+  }
+  User <-- Doc
+/'  note "An edge from Doc to Trade\nwith a full path to the linked part\nof the document, example: ['stages',\n<stage index>, 'docs', <stagedoc index>]" as NoteDoc
+  Trade <-- NoteDoc '/
+
+  class TradeTemplate {
+    id            string, PK
+    name          String
+    description   String
+    stages        []StageTemplate
+  }
+
+  abstract StageTemplate {
+    name:       String PK
+    description String
+    owner       TradeActorEnum
+  }
+
+  abstract StageModerator {
+    user      User.id
+    createdAt Datetime
+  }
+
+  abstract TradeParticipant {
+    userID:   User.id
+    keyPath:  String
+    walletID: wallet.id
+    pubKey:   String
+  }
+
+  class TradeOffer {
+    id:          UUID PK
+    isSellL      Boolean
+    status:      OfferStatus
+    createdBy:   User.id
+    createdAt:   Date
+    expiresAt:   Date Null
+    closedAt:    Date Null
+    companyID:   Company.id
+    displayCompany: Boolean
+    commodity:  String
+    comType:    []String
+    quality:    String
+    incoterm:   Incoterm
+    marketLoc:  String
+    vol:        Integer
+    price:      Float
+    shipment:   (Time, Time)
+    docID:     Doc.id
+  }
+  User <-- TradeOffer : createdBy
+  User <-- StageModerator  : user
+  TradeOffer <-right-> Doc: edge
+
+  class TxSourceAccount {
+    id             SCAddr PK
+    sKey           SCSecret
+    type           TXSourceAccTypeEnum
+    lockTradeID    string
+    lockUserID     string
+    lockExpiresAt  time.Time
+    lockUnlockedAt *time.Time
+  }
+  TxSourceAccount <-- Trade           : scAddr
+  TxSourceAccount <-- TxSourceAccount : lockRelatedPoolAcc
+  User            <-- TxSourceAccount : lockUserID
+
+  Stage *-- StageModerator : moderator
+  TradeTemplate *-- StageTemplate
+  TradeTemplate <-right Trade
+  Trade *-- TradeParticipant : belongs to
+  User <-right TradeParticipant : User.id
+}
+
+enum FileType {
+  name String PK
+}
+
+enum DoneEnum {
+  0
+  done
+}
+
+enum ApprovalEnum {
+  0  # not initialized
+  pending
+  rejected
+  approved
+  submitted  # not requires approval
+}
+
+enum SimpleApprovalEnum {
+  rejected
+  approved
+}
+
+enum TradeActorEnum {
+  b = buyer
+  s = seller
+}
+
+enum DoneStatus {
+  nil
+  doing
+  done
+}
+
+enum TXSourceAccType {
+  trade
+  pool
+}
+
+package "TxLog" #FFDDDD {
+
+  class TxLog {
+    id             PK
+    txStatus       TxStatusEnum
+    ledgerPlatform LedgerPlatformEnum
+    rawTx          string
+    createdBy      User.id
+    updatedAt      Date
+    nonce          string
+    notes          string
+    sourceAcc      string
+  }
+
+  class TxLogEdge {
+    id         PK
+    tradeId    Trade.id
+    stageId    Stage.id
+    docId      Doc.id
+  }
+
+  TxLog <-- TxLogEdge : TxLogEdge.id
+  Trade <-- TxLogEdge : Trade.id
+  Stage <-- TxLogEdge : Stage.id
+  Doc   <-- TxLogEdge : Doc.id
+
+  User  <-- TxLog : User.id
+
+  enum LedgerPlatformEnum {
+    stellar = Stellar smart contract
+  }
+
+  enum TxStatusEnum {
+    pending
+    ok
+    failed
+  }
+
+  enum OfferStatus {
+    firm
+    quote
+  }
+
+  enum Incoterm {
+  }
+
+  enum UserRoleEnum {
+    trader
+    moderator
+  }
+}
+@enduml

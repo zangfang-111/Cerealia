@@ -1,0 +1,180 @@
+.header {
+  height: $header-height;
+  @include themify($themes) {
+    color: themed('badge-icon');
+    background-color: themed('header-bg');
+  }
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+
+  .logo-image {
+    margin-left: calc(#{$link-tag-margin} - 10px);
+    .logo-brand {
+      height: 18px;
+    }
+    div{
+      font-size: 11px;
+      @include themify($themes) {
+        color: themed('brand-label');  
+      }
+    }
+  }
+
+  .trade-utils {
+    position: absolute;
+    left: calc(#{$link-tag-margin} + #{$side-link-width} + #{$right-view-margin});
+    display: flex;
+    .btn-new-trade {
+      height: 40px;
+      @include themify($themes) {
+        background-color: themed('button-add-new-bg');
+        color: themed('brand-title');
+      }
+      margin-right: 12px;
+      padding: 0 12px !important;
+      i {
+        @include themify($themes) {
+          color: themed('brand-filler');
+        }
+      }
+    }
+    .select-icon {
+      @include themify($themes) {
+        color: themed('brand-title');
+      }
+    }
+    .select-trades {
+      width: 160px;
+      margin-right: 12px;
+      @include themify($themes) {
+        color: themed('brand-title') !important;
+      }
+    }
+    .search-trades {
+      width: 160px;
+      @include themify($themes) {
+        color: themed('badge-icon');
+        background-color: themed('header-bg');
+      }
+    }
+    .expand-search {
+      width: 350px;
+      @include themify($themes) {
+        color: themed('badge-icon');
+        background-color: themed('header-bg');
+      }
+    }
+  }
+
+  .header-right {
+    position: absolute;
+    right: $link-tag-margin;
+    .ant-badge, .ant-spin {
+      margin-right: 18px;
+      i {
+        margin: 0;
+      }
+      sup {
+        @include themify($themes) {
+          background-color: themed('badge-icon');
+        }
+      }
+    }
+    .ant-dropdown-link {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.ant-select-selection{
+  @include themify($themes) {
+    background-color: themed('header-bg');
+    color: themed('brand-text');
+  }
+}
+.ant-select-arrow{
+  @include themify($themes) {
+    color: themed('brand-text')
+  }
+}
+
+.ant-input-search-icon {
+  @include themify($themes) {
+    background-color: themed('header-bg');
+    color: themed('brand-text');
+  }
+  a{
+    @include themify($themes) {
+      color: themed('brand-text');
+      background-color: themed('header-bg');
+    }
+  }
+}
+
+.ant-input {
+  @include themify($themes) {
+    color: themed('badge-icon');
+    background-color: themed('header-bg');
+  }
+  a{
+    @include themify($themes) {
+      color: themed('brand-text');
+    }
+  }
+}
+
+.trade-list {
+  li:hover {
+    @include themify($themes) {
+      color: themed('brand-title');
+    }
+    a {
+      color: white !important;
+    }
+  }
+}
+
+
+.user-logout-name {
+  margin-left: 30px;
+  font-style: italic;
+  font-size: 13px;
+}
+@media screen and (min-width: 880px) and (max-width: 1150px) {
+  .header {
+    .logo-image {
+      margin-left: 20px !important;
+    }
+    .trade-utils {
+      left: 180px !important;
+    }
+    .header-right {
+      right: $right-view-margin !important;
+    }
+  }
+}
+
+@media screen and (max-width: 880px) {
+  .header {
+    overflow: auto;
+    .logo-image {
+      margin-left: 20px !important;
+    }
+    .trade-utils {
+      left: 180px !important;
+    }
+    .header-right {
+      left: 580px !important;
+      width: 300px;
+    }
+  }
+}

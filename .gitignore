@@ -1,0 +1,72 @@
+### Local build binaries
+*.pyc
+/bin
+/build
+/release/darwin-amd64
+/release/linux-amd64
+/release/linux-s390x
+/release/linux-ppc64le
+/release/windows-amd64
+###### GO
+# Compiled Object files, Static and Dynamic libs (Shared Objects), test applications
+*.o
+*.test
+
+##### JS
+.tern-port
+
+### dependencies
+/vendor
+
+### project files
+.settings
+.project
+.gradle
+
+### editors
+.dir-locals.el
+.idea
+*.iml
+.DS_Store
+# Emacs backup files
+*~
+*#
+.#*
+# Vim file artifacts
+.*.sw*
+# vscode settings
+.vscode
+*.code-workspace
+.lock
+
+### tags
+.tags
+.vagrant/
+
+### debugging / testing
+*.log
+# bddtest coverage files
+bddtests/coverage
+# bddtest Dockerfile
+bddtests/environments/kafka/Dockerfile
+bddtests/tmp
+bddtests/volumes
+*.cov
+.coverage
+coverage.out
+# Makefile dummy artifacts
+.*-dummy
+# go-carpet output files
+go-carpet-coverage*
+
+# make node-sdk copied files
+sdk/node/lib/protos/*
+
+# Test result xml files
+report.xml
+results.xml
+TESTS*.xml
+
+
+### private
+private

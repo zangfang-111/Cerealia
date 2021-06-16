@@ -1,0 +1,26 @@
+{
+	"extends": [
+		"standard",
+		"standard-react",
+		"plugin:flowtype/recommended"
+	],
+	"plugins": [
+		"flowtype",
+		"react-hooks"
+	],
+	"rules": {
+		"max-len": [1, 96, 2, { "ignoreComments": true, "ignoreStrings": true}],
+		"react-hooks/rules-of-hooks": "error",
+    	"react-hooks/exhaustive-deps": "warn"
+	},
+	"env": {
+		"jest": true,
+		"es6": true,
+		"browser": true
+	},
+	"settings": {
+		"react": {
+			"version": "16.4"
+		}
+	}
+}

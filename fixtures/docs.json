@@ -1,0 +1,92 @@
+[
+  {
+    "_key": "aaa1",
+    "hash": "",
+    "name": "Trade contract.txt",
+    "note": "Initial trade contract",
+    "type": "txt",
+    "url": "fixtureDoc_tradeA_Contract.txt",
+    "createdBy": "1",
+    "createdAt": "2018-09-27T07:10:59.480058629Z"
+  },
+  {
+    "_key": "aaa2",
+    "hash": "",
+    "name": "Trade contract v2.pdf",
+    "note": "Second version of trade contract",
+    "type": "pdf",
+    "url": "fixtureDoc_tradeA_Contract_v2.pdf",
+    "createdBy": "1",
+    "createdAt": "2018-09-28T07:10:59.480058629Z"
+  },
+  {
+    "_key": "aaa3",
+    "hash": "",
+    "name": "vessel.txt",
+    "note": "Uploading vessel doc",
+    "type": "txt",
+    "url": "fixtureDoc_tradeA_VesselNomination.txt",
+    "createdBy": "1",
+    "createdAt": "2018-09-27T07:30:07.195616202Z"
+  },
+  {
+    "_key": "bbb1",
+    "hash": "",
+    "name": "Trade 2 contract.txt",
+    "note": "Sending trade contract",
+    "type": "txt",
+    "url": "fixtureDoc_tradeB_Contract.txt",
+    "createdBy": "1",
+    "createdAt": "2018-09-28T07:10:59.480058629Z"
+  },
+  {
+    "_key": "bbb2",
+    "hash": "",
+    "name": "vessel doc.txt",
+    "note": "Uploading vessel doc",
+    "type": "txt",
+    "url": "fixtureDoc_tradeB_Vessel.txt",
+    "createdBy": "1",
+    "createdAt": "2018-09-27T07:30:07.195616202Z"
+  },
+  {
+    "_key": "bbb3",
+    "hash": "",
+    "name": "vessel.txt",
+    "note": "Uploading vessel doc",
+    "type": "txt",
+    "url": "fixtureDoc_tradeA_VesselNomination.txt",
+    "createdBy": "1",
+    "createdAt": "2019-01-28T02:11:10.813744Z"
+  },
+  {
+    "_key": "aaa5",
+    "hash": "",
+    "name": "vessel.txt",
+    "note": "Uploading vessel doc",
+    "type": "txt",
+    "url": "fixtureDoc_tradeA_VesselNomination.txt",
+    "createdBy": "1",
+    "createdAt": "2018-09-27T07:30:07.195616202Z"
+  },
+  {
+    "_key": "aaa4",
+    "hash": "",
+    "name": "Trade 2 contract.txt",
+    "note": "Sending trade contract",
+    "type": "txt",
+    "url": "fixtureDoc_tradeB_Contract.txt",
+    "createdBy": "1",
+    "createdAt": "2019-01-28T06:04:30.814947Z"
+  },
+  {
+    "_key": "3470389",
+    "hash": "",
+    "name": "final_Search_mobile-pages.pdf",
+    "note": "test",
+    "type": "pdf",
+    "url": "166ac59c-24c2-11e9-af01-000c29b7df4b.pdf",
+    "createdBy": "2",
+    "createdAt": "2019-01-30T19:06:03.995269Z"
+  }
+]

@@ -1,0 +1,62 @@
+.home {
+  margin-bottom: 197px;
+  // width: 100%;
+  .home-empty {
+    width: 100%;
+    margin-top: $right-view-margin-top;
+    margin-left: $right-view-margin;
+    p {
+      font-size: 24px;
+      font-weight: 600;
+      @include themify($themes) {
+        color: themed('badge-icon');
+      }
+      margin-bottom: 27px;
+    }
+  }
+  .contract-section {
+    margin-top: $right-view-margin-top;
+    margin-left: $right-view-margin;
+
+    .trade {
+      padding: 0 20% 0 0;
+      .btn-group {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin-top: 20px;
+
+        p {
+          margin-right: 10px;
+          @include themify($themes) {
+            color: themed('badge-icon');
+          }
+          font-size: 14px;
+        }
+
+        i {
+          font-size: 24px;
+          @include themify($themes) {
+            color: themed('button-add-new-bg');
+            background-color: themed('brand-modal');
+          }
+          border-radius: 50%;
+        }
+
+        &.hoverable:hover {
+          cursor: pointer;
+
+          p {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
+
+.loading-center-spinner {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}

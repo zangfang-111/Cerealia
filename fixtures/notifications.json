@@ -1,0 +1,68 @@
+[
+  {
+    "_key": "1",
+    "createdAt": "2018-09-02T14:43:35.423969Z",
+    "triggeredBy": "1",
+    "receiver": ["2"],
+    "type": "action",
+    "dismissed": [],
+    "entityID": "trades:1993134/stages:2/closeReqs:0",
+    "msg": "New stage close request has been created",
+    "approval": "created"
+  },
+  {
+    "_key": "2",
+    "createdAt": "2018-09-03T14:43:35.423969Z",
+    "triggeredBy": "2",
+    "receiver": ["1"],
+    "type": "action",
+    "dismissed": [],
+    "entityID": "trades:1993134/stages:0/doc:0",
+    "msg": "New document has been rejected",
+    "approval": "rejected"
+  },
+  {
+    "_key": "3",
+    "createdAt": "2018-09-04T14:43:35.423969Z",
+    "triggeredBy": "2",
+    "receiver": ["1"],
+    "type": "action",
+    "dismissed": [],
+    "entityID": "trades:1993134/stages:0/doc:1",
+    "msg": "New document has been approved",
+    "approval": "approved"
+  },
+  {
+    "_key": "4",
+    "createdAt": "2018-09-05T14:43:35.423969Z",
+    "triggeredBy": "1",
+    "receiver": ["2"],
+    "type": "action",
+    "dismissed": [],
+    "entityID": "trades:1993134/stages:1/closeReqs:1",
+    "msg": "New stage close request has been approved",
+    "approval": "approved"
+  },
+  {
+    "_key": "5",
+    "createdAt": "2018-09-06T14:43:35.423969Z",
+    "triggeredBy": "1",
+    "receiver": ["2"],
+    "type": "action",
+    "dismissed": [],
+    "entityID": "trades:1993134/stages:2/delReqs:0",
+    "msg": "stage delete request has been rejected",
+    "approval": "rejected"
+  },
+  {
+    "_key": "6",
+    "createdAt": "2018-09-04T14:43:35.423969Z",
+    "triggeredBy": "",
+    "receiver": ["1", "2"],
+    "type": "alert",
+    "dismissed": [],
+    "entityID": "trades:1993134/stages:0/doc:1",
+    "msg": "Document expired",
+    "approval": "expired"
+  }
+]

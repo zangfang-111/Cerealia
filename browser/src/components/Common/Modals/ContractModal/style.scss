@@ -1,0 +1,541 @@
+.vertical-center-modal {
+
+  .modal-container {
+    width: auto !important;
+    padding-bottom: 0 !important;
+
+    .ant-modal-content {
+      min-width: 460px !important;
+      max-width: 660px !important;
+      margin: 0 auto;
+      
+      @include themify($themes) {
+        background-color: themed('bg-transparent');
+      }
+
+      .ant-modal-header {
+        display: none;
+      }
+
+      .ant-modal-body {
+        padding: 0;
+
+        .modal-content {
+          height: 100%;
+          position: relative;
+          background: $white;
+          box-shadow: 0 30px 100px rgba(0, 0, 0, 0.1);
+          border-radius: 12px;
+          border-top-left-radius: 52px;
+          display: flex;
+          flex-flow: column;
+          justify-content: space-around;
+          margin-top: 15%;
+
+          .modal-title {
+            margin: -80px 0px 40px 80px;
+            font-size: 22px;
+            font-weight: bold;
+            @include themify($themes) {
+              color: themed('brand-title');
+            }
+          }
+
+          .text-field {
+            p {
+              margin: 10px 10px;
+            }
+          }
+          input {
+            @include themify($themes) {
+              border: 1px solid themed('brand-disabled');
+            }
+            width: 100%;
+            border-radius: 4px;
+            box-sizing: border-box;
+            padding: 4px 8px;
+          }
+
+          &::before {
+            content: "";
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            background-color: $white;
+            color: $white;
+            position: absolute;
+            top: -32px;
+            left: 0;
+            z-index: 0;
+          }
+          p.error {
+            @include themify($themes) {
+              color: themed('brand-critical') !important;
+            }
+            margin-top: 2px;
+          }
+          .circle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: -32px;
+            width: 140px;
+            height: 140px;
+            left: 0;
+
+            & > i {
+              font-size: 40px;
+              margin: 0;
+              @include themify($themes) {
+                color: themed('down-load');
+              }
+            }
+          }
+
+          .close-icon {
+            position: absolute;
+            right: 30px;
+            top: 30px;
+
+            & > i {
+              margin: 0;
+              font-size: 24px;
+              @include themify($themes) {
+                color: themed('down-load');
+              }
+            }
+          }
+
+          .bottom-right-button {
+            margin: 15px 0px;
+            text-align: right;
+          }
+
+          .switching-section {
+            width: 120px;
+            height: 40px;
+            display: flex;
+            margin-right: 5px;
+
+            .show-switch {
+              @include themify($themes) {
+                background-color: themed('side-menu-active-bg-color');
+              }
+            }
+          }
+          .modal-content-text {
+            text-align: center;
+            margin-bottom: 40px;
+          }
+          .confirm-btn {
+            display: flex;
+            justify-content: flex-end;
+          }
+
+          .confirm {
+            margin: 110px 55px 30px 55px;
+
+            & > p:first-child {
+             & > p:first-child {
+                position: absolute;
+                left: 125px;
+                top: 30px;
+                margin-right: 60px;
+
+                font-size: 24px;
+                font-weight: bold;
+                @include themify($themes) {
+                  color: themed('badge-icon');
+                }
+                line-height: 29px;
+              }
+            }
+
+            .create-new-trade {
+              input {
+                &.error {
+                  @include themify($themes) {
+                    border-color: themed('brand-critical');
+                  }
+                }
+              }
+
+              textarea {
+                &.error {
+                  @include themify($themes) {
+                    border-color: themed('brand-critical');
+                  }
+                }
+              }
+
+              .input-container {
+                display: flex;
+                flex-direction: column;
+
+                & > div:first-child {
+                  margin-bottom: 13px;
+
+                  label {
+                    span:nth-child(2) {
+                      @include themify($themes) {
+                        background-color: themed('label-color');
+                      }
+                      font-size: 14px;
+                      font-weight: bold;
+                    }
+                  }
+                }
+
+                input {
+                  margin-bottom: 10px;
+                }
+
+                .input-selector-group {
+                  display: flex !important;
+                  justify-content: space-between;
+                  margin-bottom: 28px;
+
+                  & > div {
+                    width: 48%;
+                  }
+                }
+              }
+
+              .description {
+                margin-bottom: 15px;
+
+                p:first-child {
+                  font-size: 18px;
+                  @include themify($themes) {
+                    background-color: themed('brand-text');
+                  }
+                  font-weight: 600;
+                }
+
+                textarea {
+                  width: 100%;
+                  min-height: 100px;
+                  border-radius: 5px;
+                }
+              }
+
+              .button-container {
+                display: flex;
+                justify-content: flex-end;
+                margin-top: 10px;
+              }
+            }
+
+
+
+
+            .add-new-stage {
+              display: flex;
+              flex-direction: column;
+
+              &.error {
+                textarea.reason {
+                  @include themify($themes) {
+                    border-color: themed('brand-critical');
+                  }
+                }
+              }
+
+              & > input {
+                margin-top: 16px;
+                margin-bottom: 22px;
+              }
+
+              textarea {
+                width: 100%;
+                min-height: 40px;
+                border-radius: 5px;
+
+                margin-bottom: 20px;
+              }
+
+              button {
+                float: right;
+              }
+
+            }
+
+            .approve-additional-stage {
+              display: flex;
+              flex-direction: column;
+
+              .btn-group {
+                display: flex;
+
+                button:nth-child(1) {
+                  margin-right: 10px;
+                }
+              }
+            }
+
+            .reject-additional-stage {
+              display: flex;
+              flex-direction: column;
+
+              textarea {
+                width: 100%;
+                min-height: 40px;
+                border-radius: 5px;
+
+                margin-bottom: 20px;
+              }
+
+              .btn-group {
+                display: flex;
+
+                button:nth-child(1) {
+                  margin-right: 10px;
+                }
+              }
+            }
+
+            .delete-stage {
+              display: flex;
+              flex-direction: column;
+
+              textarea {
+                width: 100%;
+                min-height: 40px;
+                border-radius: 5px;
+
+                margin-bottom: 20px;
+              }
+
+              .btn-group {
+                display: flex;
+
+                button:nth-child(1) {
+                  margin-right: 10px;
+                }
+              }
+            }
+
+            .close-stage {
+              display: flex;
+              flex-direction: column;
+
+              textarea {
+                width: 100%;
+                min-height: 40px;
+                border-radius: 5px;
+
+                margin-bottom: 20px;
+              }
+
+              .btn-group {
+                display: flex;
+
+                button:nth-child(1) {
+                  margin-right: 10px;
+                }
+              }
+            }
+
+            .confirm-deleting-stage {
+              display: flex;
+              flex-direction: column;
+
+              textarea {
+                width: 100%;
+                min-height: 40px;
+                border-radius: 5px;
+
+                margin-bottom: 20px;
+              }
+
+              .btn-group {
+                display: flex;
+
+                button:nth-child(1) {
+                  margin-right: 10px;
+                }
+              }
+            }
+
+            .confirm-closing-stage {
+              display: flex;
+              flex-direction: column;
+
+              textarea {
+                width: 100%;
+                min-height: 40px;
+                border-radius: 5px;
+
+                margin-bottom: 20px;
+              }
+
+              .btn-group {
+                display: flex;
+
+                button:nth-child(1) {
+                  margin-right: 10px;
+                }
+              }
+            }
+
+            .add-new-document {
+
+              .file-upload {
+                margin-bottom: 26px;
+                @include themify($themes) {
+                  color: themed('down-load');
+                }
+              }
+
+              & > p {
+                font-weight: bold;
+                margin-bottom: 20px;
+              }
+
+              input {
+                margin-bottom: 10px;
+              }
+
+              textarea {
+                width: 100%;
+                border-radius: 5px;
+                margin-bottom: 37px;
+              }
+
+              .date-section {
+                display: flex;
+                flex-direction: column;
+
+                & > div {
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  margin-bottom: 10px;
+                }
+
+                .second-part {
+                  .ant-calendar-picker {
+                    input {
+                      font-weight: bold;
+                    }
+                  }
+                  &:nth-child(2) {
+                    z-index: 1;
+                    input {
+                      font-weight: bold;
+                    }
+                  }
+                }
+
+                p.error {
+                  @include themify($themes) {
+                    color: themed('brand-critical');
+                  }
+                }
+              }
+
+              .button-container {
+                text-align: right;
+              }
+            }
+
+            .approve-additional-doc {
+
+              .btn-group {
+                display: flex;
+                justify-content: space-around;
+                margin-top: 20px;
+              }
+            }
+
+            .reject-additional-doc {
+              display: flex;
+              flex-direction: column;
+
+              textarea {
+                width: 100%;
+                min-height: 40px;
+                border-radius: 5px;
+
+                margin-bottom: 20px;
+              }
+
+              .btn-group {
+                display: flex;
+
+                button:nth-child(1) {
+                  margin-right: 10px;
+                }
+              }
+            }
+
+            .rejected-document-reason {
+              display: flex;
+              flex-direction: column;
+
+              textarea {
+                width: 100%;
+                min-height: 40px;
+                border-radius: 5px;
+
+                margin-bottom: 20px;
+              }
+
+              .button-container {
+                text-align: right;
+              }
+            }
+
+            .confirm-decline {
+
+              & > p {
+                font-size: 29px;
+                font-weight: bold;
+                @include themify($themes) {
+                  color: themed('brand-modal');
+                }
+                line-height: 1;
+              }
+
+              .btn-group {
+                display: flex;
+                justify-content: space-around;
+                margin-top: 20px;
+              }
+            }
+          }
+        }
+      }
+
+      .ant-modal-footer {
+        display: none;
+      }
+    }
+  }
+}
+
+i.fas {
+  margin-right: 0.5em;
+  font-size: 14px;
+}
+.confirm-approve {
+  display: flex;
+  font-size: 16px !important;
+  @include themify($themes) {
+    color: themed('brand-title');
+  }
+  align-items: flex-start;
+  margin-bottom: 20px;
+
+  .switch-btn {
+    margin-top: 0px;
+    margin-right: 10px;
+  }
+
+  .ant-switch-checked {
+    @include themify($themes) {
+      background-color: themed('side-menu-active-bg-color');
+    }
+  }
+}

@@ -1,0 +1,13 @@
+[
+  {
+    "_key": "1234",
+    "txStatus": "created",
+    "ledger": "stellar",
+    "rawTx": "tx xdr",
+    "createdBy": "2",
+    "createdAt": "2018-09-02T14:43:35.423969Z",
+    "notes": "",
+    "txid": "",
+    "nonce" : 123
+  }
+]

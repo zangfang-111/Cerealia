@@ -1,0 +1,48 @@
+@-webkit-keyframes fadeIn {
+  0% { opacity: 0;}
+  99% { opacity: 0.99;}
+  100% {
+    opacity: 1;
+  }
+}  
+@keyframes fadeIn {
+  0% { opacity: 0;}
+  99% { opacity: 0.99;}
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeOut {
+  0% { opacity: 1;}
+  99% { opacity: 0.01;}
+  100% {
+    opacity: 0;
+    left: -9999px;
+    position: absolute;
+  }
+}  
+@keyframes fadeOut {
+  0% { opacity: 1;}
+  99% { opacity: 0.01;}
+  100% {
+    opacity: 0;
+    left: -9999px;
+    position: absolute;
+  }
+}
+
+.fadein {
+  display: block;
+  -webkit-animation: fadeIn 5.0s forwards;
+  -webkit-animation-iteration-count: 1;
+  animation: fadeIn 5.0s forwards;
+  animation-iteration-count: 1;
+}
+
+.fadeout {
+  -webkit-animation: fadeOut 5.0s forwards;
+  -webkit-animation-iteration-count: 1;
+  animation: fadeOut 5.0s forwards;
+  animation-iteration-count: 1;
+}
